@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+*{
+  box-sizing: border-box;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -23,16 +25,13 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+header {
+  width: 100vw;
+  height: 100px;
+  background: #282c34;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Navbar{
+  width: 300px;
+  height: 100vh;
+  background: antiquewhite;
 }
