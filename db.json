@@ -1,19 +1,49 @@
 {
-  "posts": [
+  "logs": [
     {
-      "id": 1,
-      "title": "리덕스 미들웨어를 배워봅시다",
-      "body": "리덕스 미들웨어를 직접 만들어보면 이해하기 쉽죠."
-    },
-    {
-      "id": 2,
-      "title": "redux-thunk를 사용해봅시다",
-      "body": "redux-thunk를 사용해서 비동기 작업을 처리해봅시다!"
+      "attention": true,
+      "tech": "Sam Smith",
+      "date": "2021-04-11T11:09:07.703Z",
+      "id": 2
     },
     {
       "id": 3,
-      "title": "redux-saga도 사용해봅시다",
-      "body": "나중엔 redux-saga를 사용해서 비동기 작업을 처리하는 방법도 배워볼 거예요."
+      "attention": true,
+      "tech": "John Doe",
+      "date": "2021-04-11T11:18:20.770Z"
+    },
+    {
+      "id": 4,
+      "attention": "",
+      "tech": "Sam Smith",
+      "date": "2021-04-11T11:17:18.339Z"
+    }
+  ],
+  "techs": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe"
+    },
+    {
+      "id": 2,
+      "firstName": "Sam",
+      "lastName": "Smith"
+    },
+    {
+      "id": 3,
+      "firstName": "Sara",
+      "lastName": "Wilson"
+    }
+  ],
+  "formats": [
+    {
+      "id": 1,
+      "title": "의사진단서"
+    },
+    {
+      "id": 2,
+      "title": "병원진료확인서"
     }
   ]
 }
