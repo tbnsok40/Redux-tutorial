@@ -7,6 +7,7 @@ import LogItem from "./LogItem";
 import M from 'materialize-css/dist/js/materialize.min'
 
 const Formats = ({title: {titles, loading}, getTitles}) => {
+
     useEffect(() => {
         getTitles();
         let elem = document.querySelectorAll('.collapsible');
@@ -23,31 +24,22 @@ const Formats = ({title: {titles, loading}, getTitles}) => {
 
     return (
         <Fragment>
-            <ul className="collapsible" data-collapsible="accordion">
-                <li>
-                    <div className="collapsible-header"><i className="mdi-image-filter-drama"></i>First</div>
-                    <div className="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-                </li>
-                <li>
-                    <div className="collapsible-header"><i className="mdi-maps-place"></i>Second</div>
-                    <div className="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-                </li>
-                <li>
-                    <div className="collapsible-header"><i className="mdi-social-whatshot"></i>Third</div>
-                    <div className="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-                </li>
-            </ul>
-
-
             <ul className="collection with-header">
                 <li className="collection-header">
-                    <h4 className="center">Titles</h4>
+                    <h4 className="center">제증명서 리스트</h4>
                 </li>
                 {
                     titles.map(t => {
-                        return (<div key={t.id}>
+                        return (<h3 key={t.id}>
                             {t.title}
-                        </div>)
+                            <br/>
+
+                            {t.nested.map(t => {
+                                return (
+                                    <a href="/"><h6>{t.title}</h6></a>
+                                )
+                            })}
+                        </h3>)
                     })
                 }
 
