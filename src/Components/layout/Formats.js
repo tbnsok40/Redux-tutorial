@@ -4,17 +4,13 @@ import {connect} from 'react-redux'; // reducer와 연결하기 위해 필요한
 import PropTypes from 'prop-types';
 import {getTitles} from "../../actions/titleActions";
 import LogItem from "./LogItem";
+import Accordion from "../Acc/Accordion";
 import M from 'materialize-css/dist/js/materialize.min'
 
 const Formats = ({title: {titles, loading}, getTitles}) => {
 
     useEffect(() => {
         getTitles();
-        let elem = document.querySelectorAll('.collapsible');
-        M.Collapsible.init(elem, {
-            accordion: false
-        });
-        // M.Collapsible.init(document.querySelectorAll('.collapsible'));
     }, [])
 
     if (titles === null) {
@@ -28,20 +24,7 @@ const Formats = ({title: {titles, loading}, getTitles}) => {
                 <li className="collection-header">
                     <h4 className="center">제증명서 리스트</h4>
                 </li>
-                {
-                    titles.map(t => {
-                        return (<h3 key={t.id}>
-                            {t.title}
-                            <br/>
-
-                            {t.nested.map(t => {
-                                return (
-                                    <a href="/"><h6>{t.title}</h6></a>
-                                )
-                            })}
-                        </h3>)
-                    })
-                }
+                <Accordion title ={titles}/>
 
                 {/*{!loading && titles.length === 0 ? (<p className="center"> No titles to show...</p>) :*/}
                 {/*    (titles.map(ti => <FormatItem title={ti} key={ti.id}/>))*/}

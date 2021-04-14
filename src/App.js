@@ -14,6 +14,7 @@ import store from './store';
 import EditLogModal from "./Components/layout/EditLogModal";
 import Formats from "./Components/layout/Formats";
 
+import Accordion from './Components/Acc/Accordion'
 
 const App = () => {
     useEffect(() => {
@@ -27,15 +28,14 @@ const App = () => {
 
 
                 <Searchbar/>
-
-                <div className="navbar-left">
+                {/*<div className="navbar-left">*/}
                     {/*<Logs/>*/}
                     {/*<AddLogModal2/>*/}
                     {/*<AddTechModal/>*/}
                     {/*<TechListModal/>*/}
                     {/*<AddBtn/>*/}
                     {/*<EditLogModal/>*/}
-                </div>
+                {/*</div>*/}
 
                 <div className="navbar-right">
                     <Formats/>
