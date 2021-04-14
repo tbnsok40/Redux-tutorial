@@ -1,29 +1,31 @@
 import React, {useEffect, useState} from "react";
-import {addTitles, getCategory} from "../../../actions/categoryActions";
-import {getDocs} from '../../../actions/docsActions'
+import {addCategory, getCategory} from "../../../actions/categoryActions";
+import {getDocs, addDocs} from '../../../actions/docsActions'
 import PropTypes from 'prop-types';
 // import {addTitles} from "../../../actions/titleActions";
 // import connect from "react-redux/lib/connect/connect";
 import {connect} from "react-redux";
 import M from 'materialize-css/dist/js/materialize.min.js'
 
-const AddCertificateModal = ({category: {category}, doc:{doc}, getDocs, getCategory, addTitles}) => {
+const AddCertificateModal = ({category: {category}, doc: {doc}, getDocs, getCategory, addDocs}) => {
     useEffect(() => {
         getCategory();
         getDocs();
+        // addCategory();
     }, [])
 
     const [title, setTitle] = useState('');
     const [currcategory, setCurrcategory] = useState('');
     const onSubmit = () => {
+        const category = currcategory
 
         const newTitle = {
             category,
+            title
         }
-        console.log(newTitle);
-        addTitles(newTitle);
+        addDocs(newTitle);
         M.toast({html: "titles added in"})
-        setCurrcategory('');
+        // setCurrcategory('');
         setTitle('');
     }
     return (
@@ -40,16 +42,17 @@ const AddCertificateModal = ({category: {category}, doc:{doc}, getDocs, getCateg
                     <div className="input-field">
                         <select name="category" className='browser-default'
                                 value={currcategory}
-                                onChange={e => setCurrcategory(e.target.value)}>
+                            onChange={e=> setCurrcategory(e.target.value)}>
+                        >
                             <option value='' disabled>
                                 Select Category
                             </option>
 
-                        {category !== null && category.map(c =>
-                            <option value={c.category} key={c.id}>
-                                {c.category}
-                            </option>
-                        )}
+                            {category !== null && category.map(c =>
+                                <option value={c.title} key={c.id}>
+                                    {c.title}
+                                </option>
+                            )}
                         </select>
                     </div>
                 </div>
@@ -71,9 +74,9 @@ const mapStateToProps = state => ({
     doc: state.doc
 })
 AddCertificateModal.propTypes = {
-    addTitles: PropTypes.func.isRequired,
+    addDocs: PropTypes.func.isRequired,
     getCategory: PropTypes.func.isRequired,
     getDocs: PropTypes.func.isRequired,
 }
-export default connect(mapStateToProps, {getCategory, addTitles, getDocs})(AddCertificateModal);
+export default connect(mapStateToProps, {getCategory, addDocs, getDocs})(AddCertificateModal);
 

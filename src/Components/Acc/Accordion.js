@@ -29,28 +29,21 @@ const CustomToggle = ({children, eventKey}) => {
 const Example = ({category: {category}, doc: {doc}}) => {
     return (
         <Fragment>
-            {/*{doc !== undefined && console.log(doc)}*/}
-            {console.log(doc)}
             {category !== undefined && category.map(t => {
                 return (
-
                     <Accordion defaultActiveKey="0" key={t.id}>
-
                         <Card>
                             <Card.Header>
                                 <CustomToggle eventKey="0">{t.title}</CustomToggle>
                             </Card.Header>
-
                             {t.title && doc !== null && doc.map(ts => {
                                 return (
                                     (t.title === ts.category &&
                                     <Accordion.Collapse eventKey="0" key={ts.id}>
                                         <Card.Body>{ts.title}</Card.Body>
-                                    </Accordion.Collapse>
-                                    )
+                                    </Accordion.Collapse>)
                                 )
                             })}
-
                         </Card>
                     </Accordion>
                 )

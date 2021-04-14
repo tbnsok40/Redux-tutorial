@@ -22,7 +22,7 @@ export const getCategory = () => async dispatch => {
     }
 }
 
-export const addTitles = (title) => async dispatch => {
+export const addCategory = (title) => async dispatch => {
     try {
         setLoading();
 
@@ -32,11 +32,11 @@ export const addTitles = (title) => async dispatch => {
             headers: {"Content-Type": "application/json"}
         });
         const data = await res.json()
-        const data2 = data.nested
-        console.log('data: ', data2) // 이미 여기서 id가지고 있다.
+
+        console.log('data: ', data) // 이미 여기서 id가지고 있다.
         dispatch({
             type: ADD_CATEGORY,
-            payload: data2
+            // payload: data
         });
     } catch (err) {
         dispatch({

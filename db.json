@@ -34,52 +34,47 @@
       "id": 3,
       "firstName": "Sara",
       "lastName": "Wilson"
-    }
-  ],
-  "formats": [
-    {
-      "id": 1,
-      "category": "의뢰서",
-      "nested": [
-        {
-          "id": 1,
-          "title": "응급환자 진료 의뢰서"
-        },
-        {
-          "id": 2,
-          "title": "진료 의뢰서"
-        },
-        {
-          "id": 3,
-          "title": "의료급여 의뢰서"
-        }
-      ]
     },
     {
-      "id": 2,
-      "category": "확인서",
-      "nested": [
+      "category": [
         {
           "id": 1,
-          "title": "응급실 내원 확인서"
+          "title": "의뢰서"
         },
         {
           "id": 2,
-          "title": "수술 확인서"
-        },
-        {
-          "id": 3,
-          "title": "상급병실 사용 확인서"
-        },
-        {
-          "id": 4,
-          "title": "진료 확인서"
-        },
-        {
-          "id": 5,
-          "title": "입퇴원 확인서"
+          "title": "확인서"
         }
-      ]
+      ],
+      "id": 3
+    },
+    {
+      "category": [
+        {
+          "id": 1,
+          "title": "의뢰서"
+        },
+        {
+          "id": 2,
+          "title": "확인서"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "currcategory": "확인서",
+      "title": "주니어 썸띵",
+      "id": 5
+    },
+    {
+      "currcategory": "의뢰서",
+      "title": "10진태",
+      "id": 6
+    },
+    {
+      "category": "확인서",
+      "title": "에러날까?",
+      "id": 7
     }
   ],
   "category": [
@@ -90,6 +85,22 @@
     {
       "id": 2,
       "title": "확인서"
+    },
+    {
+      "id": 3,
+      "title": "소견서"
+    },
+    {
+      "id": 4,
+      "title": "증명서"
+    },
+    {
+      "id": 5,
+      "title": "진단서"
+    },
+    {
+      "id": 6,
+      "title": "신청서"
     }
   ],
   "docs": [
@@ -102,6 +113,21 @@
       "id": 2,
       "category": "확인서",
       "title": "수술 확인서"
+    },
+    {
+      "category": "의뢰서",
+      "title": "addDocs ",
+      "id": 3
+    },
+    {
+      "category": "확인서",
+      "title": "진단 확인서",
+      "id": 4
+    },
+    {
+      "category": "진단서",
+      "title": "주니어 썸띵",
+      "id": 5
     }
   ]
 }

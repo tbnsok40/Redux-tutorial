@@ -1,4 +1,4 @@
-import { GET_DOCS } from "../actions/type";
+import {ADD_DOCS, GET_DOCS} from "../actions/type";
 
 const initialState = {
     doc: null,
@@ -11,12 +11,18 @@ const initialState = {
 export default (state = initialState, action) => {
     switch (action.type) {
         case GET_DOCS:
-            console.log(action.payload)
             return{
                 ...state,
                 doc: action.payload,
                 loading: false
             };
+
+        case ADD_DOCS:
+            return{
+                ...state,
+                doc: [...state.doc, action.payload],
+                loading: false
+            }
         default:
             return state
     }
