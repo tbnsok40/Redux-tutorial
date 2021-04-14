@@ -12,8 +12,8 @@ import TechListModal from "./Components/layout/TechListModal";
 import {Provider} from 'react-redux';
 import store from './store';
 import EditLogModal from "./Components/layout/EditLogModal";
-import Formats from "./Components/layout/Formats";
-
+import Formats from "./Components/layout/Certificate/Formats";
+import AddCertificateModal from "./Components/layout/Certificate/AddCertificateModal"
 import Accordion from './Components/Acc/Accordion'
 
 const App = () => {
@@ -26,20 +26,23 @@ const App = () => {
         <Provider store={store}>
             <Fragment>
 
-
                 <Searchbar/>
                 {/*<div className="navbar-left">*/}
-                    {/*<Logs/>*/}
-                    {/*<AddLogModal2/>*/}
-                    {/*<AddTechModal/>*/}
-                    {/*<TechListModal/>*/}
-                    {/*<AddBtn/>*/}
-                    {/*<EditLogModal/>*/}
+                {/*<Logs/>*/}
+                {/*<AddLogModal2/>*/}
+                {/*<AddTechModal/>*/}
+                {/*<TechListModal/>*/}
+                <AddBtn/>
+                {/*<EditLogModal/>*/}
                 {/*</div>*/}
 
                 <div className="navbar-right">
                     <Formats/>
+                    <AddCertificateModal/>
+                    {/* addtitlemodal*/}
                 </div>
+                {/*<AddBtn/>*/}
+
             </Fragment>
         </Provider>
     );

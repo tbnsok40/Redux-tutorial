@@ -39,7 +39,7 @@
   "formats": [
     {
       "id": 1,
-      "title": "의뢰서",
+      "category": "의뢰서",
       "nested": [
         {
           "id": 1,
@@ -57,8 +57,8 @@
     },
     {
       "id": 2,
-      "title": "확인서",
-            "nested": [
+      "category": "확인서",
+      "nested": [
         {
           "id": 1,
           "title": "응급실 내원 확인서"
@@ -79,8 +79,29 @@
           "id": 5,
           "title": "입퇴원 확인서"
         }
-
       ]
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "title": "의뢰서"
+    },
+    {
+      "id": 2,
+      "title": "확인서"
+    }
+  ],
+  "docs": [
+    {
+      "id": 1,
+      "category": "의뢰서",
+      "title": "진료의뢰서"
+    },
+    {
+      "id": 2,
+      "category": "확인서",
+      "title": "수술 확인서"
     }
   ]
 }

@@ -1,20 +1,20 @@
 import React, {useState, useEffect, Fragment} from 'react';
-import FormatItem from "./LogItem";
+import FormatItem from "../LogItem";
 import {connect} from 'react-redux'; // reducer와 연결하기 위해 필요한 connect
 import PropTypes from 'prop-types';
-import {getTitles} from "../../actions/titleActions";
-import LogItem from "./LogItem";
-import Accordion from "../Acc/Accordion";
+import {getTitles} from "../../../actions/titleActions";
+import LogItem from "../LogItem";
+import Accordion from "../../Acc/Accordion";
 import M from 'materialize-css/dist/js/materialize.min'
 
-const Formats = ({title: {titles, loading}, getTitles}) => {
+const Formats = ({title: {category, loading}, getTitles}) => {
 
     useEffect(() => {
         getTitles();
     }, [])
 
-    if (titles === null) {
-        return <h1> {console.log({titles})}</h1>
+    if (category === null) {
+        return <h1> {}</h1>
     }
 
 
@@ -24,7 +24,7 @@ const Formats = ({title: {titles, loading}, getTitles}) => {
                 <li className="collection-header">
                     <h4 className="center">제증명서 리스트</h4>
                 </li>
-                <Accordion title ={titles}/>
+                <Accordion title ={category}/>
 
                 {/*{!loading && titles.length === 0 ? (<p className="center"> No titles to show...</p>) :*/}
                 {/*    (titles.map(ti => <FormatItem title={ti} key={ti.id}/>))*/}

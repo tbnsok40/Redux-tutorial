@@ -7,11 +7,9 @@ import Button from 'react-bootstrap/Button';
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 import '../../App.css';
-
 import {useAccordionToggle} from 'react-bootstrap/AccordionToggle';
-import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
 
-function CustomToggle({children, eventKey}) {
+const CustomToggle = ({children, eventKey}) => {
     const decoratedOnClick = useAccordionToggle(eventKey, () =>
         console.log('totally custom!'),
     );
@@ -27,23 +25,23 @@ function CustomToggle({children, eventKey}) {
     );
 }
 
-function Example({title}) {
+const Example = ({title}) => {
     return (
         <Fragment>
             {title !== undefined && title.map(t => {
                 return (
-                    <Accordion defaultActiveKey="0" key ={t.id}>
+                    <Accordion defaultActiveKey="0" key={t.id}>
 
                         <Card>
                             <Card.Header>
-                                <CustomToggle eventKey="0">{t.title}</CustomToggle>
+                                <CustomToggle eventKey="0">{t.category}</CustomToggle>
                             </Card.Header>
                             {t.nested.map(ts => {
                                 return (
-                                    <Accordion.Collapse eventKey="0" key = {ts.id}>
+                                    <Accordion.Collapse eventKey="0" key={ts.id}>
                                         <Card.Body>{ts.title}</Card.Body>
                                     </Accordion.Collapse>
-                            )
+                                )
                             })}
                         </Card>
                     </Accordion>
