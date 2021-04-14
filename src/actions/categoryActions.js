@@ -1,16 +1,16 @@
 import {
-    LOGS_ERROR, GET_FORMAT, SET_LOADING, SET_CURRENT, ADD_FORMAT
+    LOGS_ERROR, GET_CATEGORY, SET_LOADING, SET_CURRENT, ADD_CATEGORY
 } from './type';
 
 
-export const getTitles = () => async dispatch => {
+export const getCategory = () => async dispatch => {
     try {
         setLoading();
-        const res = await fetch('/formats')
+        const res = await fetch('/category')
         const data = await res.json();
 
         dispatch({
-            type: GET_FORMAT,
+            type: GET_CATEGORY,
             payload: data
         })
     } catch (err) {
@@ -35,7 +35,7 @@ export const addTitles = (title) => async dispatch => {
         const data2 = data.nested
         console.log('data: ', data2) // 이미 여기서 id가지고 있다.
         dispatch({
-            type: ADD_FORMAT,
+            type: ADD_CATEGORY,
             payload: data2
         });
     } catch (err) {

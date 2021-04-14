@@ -13,9 +13,20 @@ export const ADD_TECH = 'ADD_TECH';
 export const DELETE_TECH = 'DELETE_TECH';
 export const TECHS_ERROR = 'TECHS_ERROR';
 
-export const GET_FORMAT = "GET_FORMAT";
-export const UPDATE_FORMAT = "UPDATE_FORMAT";
-export const ADD_FORMAT = "ADD_FORMAT";
-export const DELETE_FORMAT = "DELETE_FORMAT";
+export const GET_CATEGORY = "GET_CATEGORY";
+export const UPDATE_CATEGORY = "UPDATE_CATEGORY";
+export const ADD_CATEGORY = "ADD_CATEGORY";
+export const DELETE_CATEGORY = "DELETE_CATEGORY";
+
+export const GET_DOCS = "GET_DOCS";
+export const UPDATE_DOCS = "UPDATE_DOCS";
+export const ADD_DOCS = "ADD_DOCS";
+export const DELETE_DOCS = "DELETE_DOCS";
+
+
 
 export const FORMAT_ERROR = "FORMAT_ERROR";
+
+
+
+

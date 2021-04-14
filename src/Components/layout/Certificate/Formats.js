@@ -1,19 +1,21 @@
 import React, {useState, useEffect, Fragment} from 'react';
-import FormatItem from "../LogItem";
+// import FormatItem from "../LogItem";
 import {connect} from 'react-redux'; // reducer와 연결하기 위해 필요한 connect
 import PropTypes from 'prop-types';
-import {getTitles} from "../../../actions/titleActions";
+import {getCategory} from "../../../actions/categoryActions";
 import LogItem from "../LogItem";
 import Accordion from "../../Acc/Accordion";
 import M from 'materialize-css/dist/js/materialize.min'
+import { getDocs } from "../../../actions/docsActions";
 
-const Formats = ({title: {category, loading}, getTitles}) => {
+const Formats = ({category: {category, loading}, doc: {doc}, getCategory, getDocs}) => {
 
     useEffect(() => {
-        getTitles();
+        getCategory();
+        getDocs();
     }, [])
 
-    if (category === null) {
+    if ((category) === null) {
         return <h1> {}</h1>
     }
 
@@ -24,16 +26,10 @@ const Formats = ({title: {category, loading}, getTitles}) => {
                 <li className="collection-header">
                     <h4 className="center">제증명서 리스트</h4>
                 </li>
-                <Accordion title ={category}/>
-
-                {/*{!loading && titles.length === 0 ? (<p className="center"> No titles to show...</p>) :*/}
-                {/*    (titles.map(ti => <FormatItem title={ti} key={ti.id}/>))*/}
-                {/*}*/}
-
+                <Accordion/>
             </ul>
         </Fragment>
-    )
-        ;
+    );
 };
 
 
@@ -47,10 +43,10 @@ const Formats = ({title: {category, loading}, getTitles}) => {
 
 // 이걸 설정 안해서 일단 일차 오류
 const mapStateToProps = state => ({
-    title: state.title
-
+    category: state.category,
+    doc: state.doc
 })
 
-export default connect(mapStateToProps, {getTitles})(Formats);
+export default connect(mapStateToProps, {getCategory, getDocs})(Formats);
 
 

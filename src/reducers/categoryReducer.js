@@ -3,8 +3,8 @@ import {
     LOGS_ERROR,
     SET_CURRENT,
     CLEAR_CURRENT,
-    GET_FORMAT,
-    ADD_FORMAT
+    GET_CATEGORY,
+    ADD_CATEGORY
 } from '../actions/type';
 
 const initialState = {
@@ -12,23 +12,17 @@ const initialState = {
     loading: false,
     error: null,
     category: null,
-    // category:{
-    //     nested:''
-    // },
-    nested: null
 }
 // reducer는 어떤 상태냐에 따른 분기 처리 후, 그에 맞는 state 설정으로 return 한다. (component 내에서 하던 setState를 reducer에서 실행)
 export default (state = initialState, action) => {
     switch (action.type) {
-        case GET_FORMAT:
+        case GET_CATEGORY:
             return {
                 ...state,
                 category: action.payload,
                 loading: false
             };
-        case ADD_FORMAT: {
-            console.log(action.payload)
-        }
+        case ADD_CATEGORY:
             return {
                 ...state,
                 loading: false,

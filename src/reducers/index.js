@@ -1,8 +1,10 @@
 // this file is root reducer
 import {combineReducers} from "redux";
 import logReducer from "./logReducer";
-import titleReducer from "./titleReducer";
+import categoryReducer from "./categoryReducer";
+import docsReducer from "./docsReducer";
 export default combineReducers({
     log: logReducer,
-    title: titleReducer
+    category: categoryReducer,
+    doc: docsReducer
 });

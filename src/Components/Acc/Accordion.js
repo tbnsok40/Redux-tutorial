@@ -1,4 +1,4 @@
-import React, {Fragment, useState, useContext} from 'react';
+import React, {Fragment, useState, useContext, useEffect} from 'react';
 import {connect} from "react-redux";
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Toast from 'react-bootstrap/Toast';
@@ -8,6 +8,7 @@ import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 import '../../App.css';
 import {useAccordionToggle} from 'react-bootstrap/AccordionToggle';
+import {getDocs} from "../../actions/docsActions";
 
 const CustomToggle = ({children, eventKey}) => {
     const decoratedOnClick = useAccordionToggle(eventKey, () =>
@@ -25,24 +26,31 @@ const CustomToggle = ({children, eventKey}) => {
     );
 }
 
-const Example = ({title}) => {
+const Example = ({category: {category}, doc: {doc}}) => {
     return (
         <Fragment>
-            {title !== undefined && title.map(t => {
+            {/*{doc !== undefined && console.log(doc)}*/}
+            {console.log(doc)}
+            {category !== undefined && category.map(t => {
                 return (
+
                     <Accordion defaultActiveKey="0" key={t.id}>
 
                         <Card>
                             <Card.Header>
-                                <CustomToggle eventKey="0">{t.category}</CustomToggle>
+                                <CustomToggle eventKey="0">{t.title}</CustomToggle>
                             </Card.Header>
-                            {t.nested.map(ts => {
+
+                            {t.title && doc !== null && doc.map(ts => {
                                 return (
+                                    (t.title === ts.category &&
                                     <Accordion.Collapse eventKey="0" key={ts.id}>
                                         <Card.Body>{ts.title}</Card.Body>
                                     </Accordion.Collapse>
+                                    )
                                 )
                             })}
+
                         </Card>
                     </Accordion>
                 )
@@ -53,8 +61,9 @@ const Example = ({title}) => {
         ;
 }
 
-// const mapStateToProps = state => ({
-//     state.title
-// })
+const mapStateToProps = state => ({
+    doc: state.doc,
+    category: state.category
+})
 
-export default connect(null,)(Example);
+export default connect(mapStateToProps, {})(Example);
