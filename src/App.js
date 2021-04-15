@@ -25,8 +25,6 @@ const App = () => {
     return (
         <Provider store={store}>
             <Fragment>
-
-                <Searchbar/>
                 {/*<div className="navbar-left">*/}
                 {/*<Logs/>*/}
                 {/*<AddLogModal2/>*/}

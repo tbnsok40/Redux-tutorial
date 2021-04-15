@@ -10,3 +10,4 @@ npm i redux react-redux redux-thunk redux-devtools-extension
 - reducers 파일 생성
 - 내부에 index.js 생성
 
+- 환자 객체 post로 생성 --> db.json에 "patients":{} 만들지 않고, 곧바로 fetch 가능할까?

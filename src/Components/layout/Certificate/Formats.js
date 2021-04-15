@@ -7,6 +7,7 @@ import LogItem from "../LogItem";
 import Accordion from "../../Acc/Accordion";
 import M from 'materialize-css/dist/js/materialize.min'
 import { getDocs } from "../../../actions/docsActions";
+import Searchbar from "../Searchbar";
 
 const Formats = ({category: {category, loading}, doc: {doc}, getCategory, getDocs}) => {
 
@@ -18,23 +19,19 @@ const Formats = ({category: {category, loading}, doc: {doc}, getCategory, getDoc
     if ((category) === null) {
         return <h1> {}</h1>
     }
-
-
     return (
         <Fragment>
             <ul className="collection with-header">
                 <li className="collection-header">
                     <h4 className="center">제증명서 리스트</h4>
                 </li>
+                <Searchbar/>
                 <Accordion/>
             </ul>
         </Fragment>
     );
 };
-
-
-//bringing in as prop
-
+// bringing in as prop
 // state 다음에 ()괄호 못 찾아서 에러 터짐
 // const mapStateToProps = state => {
 //     state.log // this is from rootreducer (index.js)     // state.log is whole log state

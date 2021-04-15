@@ -2,7 +2,8 @@ import {
     GET_DOCS,
     UPDATE_DOCS,
     ADD_DOCS,
-    DELETE_DOCS, SET_LOADING, LOGS_ERROR
+    DELETE_DOCS,
+    SET_LOADING, LOGS_ERROR, SEARCH_DOCS
 } from './type'
 
 export const getDocs = () => async dispatch => {
@@ -30,7 +31,25 @@ export const addDocs = (newTitle) => async dispatch => {
         }
     });
     const data = await res.json()
-    console.log(data)
+    dispatch({
+        type: ADD_DOCS,
+        payload: data
+    })
+}
+
+
+// SearchDocs 값을 리듀서로 넘기면, state를 그 당시의 결과값만으로 치환하기에,
+// 그외의 제증명서들이 리스팅 되지 않은 것.
+export const searchDocs = (text) => async dispatch => {
+    try {
+        const res = await fetch(`/docs?q=${text}`)
+        const data = await res.json();
+        dispatch({
+            type: SEARCH_DOCS,
+            payload: data
+        })
+    } catch (err) {
+    }
 }
 
 // set loading to Ture
