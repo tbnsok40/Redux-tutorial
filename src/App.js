@@ -15,6 +15,8 @@ import EditLogModal from "./Components/layout/EditLogModal";
 import Formats from "./Components/layout/Certificate/Formats";
 import AddCertificateModal from "./Components/layout/Certificate/AddCertificateModal"
 import Accordion from './Components/Acc/Accordion'
+import Patient from "./Components/layout/Patients/Patients";
+import Paper from './Components/layout/Certificate/Paper'
 
 const App = () => {
     useEffect(() => {
@@ -30,20 +32,25 @@ const App = () => {
                 {/*<AddLogModal2/>*/}
                 {/*<AddTechModal/>*/}
                 {/*<TechListModal/>*/}
-                <AddBtn/>
                 {/*<EditLogModal/>*/}
+
                 {/*</div>*/}
 
-                <div className="navbar-right">
-                    <Formats/>
-                    <AddCertificateModal/>
-                    {/* addtitlemodal*/}
-                </div>
-                {/*<AddBtn/>*/}
+                <div className="main">
 
+                    <div className="navbar-left">
+                        <Formats/>
+                        <AddCertificateModal/>
+                    </div>
+                    <div className="navbar-center">
+                        <Patient/>
+                        <Paper/>
+                    </div>
+                    <AddBtn/>
+                </div>
             </Fragment>
         </Provider>
-    );
+);
 }
 
 export default App;
