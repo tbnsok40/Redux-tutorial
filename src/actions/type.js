@@ -23,6 +23,8 @@ export const UPDATE_DOCS = "UPDATE_DOCS";
 export const ADD_DOCS = "ADD_DOCS";
 export const DELETE_DOCS = "DELETE_DOCS";
 export const SEARCH_DOCS = "SEARCH_DOCS";
+export const CLICK_DOCS = "CLICK_DOCS";
+
 
 
 export const GET_PATIENTS = "GET_PATIENTS";

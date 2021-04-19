@@ -6,8 +6,10 @@ import {getCategory} from "../../../actions/categoryActions";
 import LogItem from "../LogItem";
 import Accordion from "../../Acc/Accordion";
 import M from 'materialize-css/dist/js/materialize.min'
-import { getDocs } from "../../../actions/docsActions";
+import {getDocs} from "../../../actions/docsActions";
 import Searchbar from "../Searchbar";
+import {HashRouter} from "react-router-dom";
+import Paper from "./Paper";
 
 const Formats = ({category: {category, loading}, doc: {doc}, getCategory, getDocs}) => {
 
@@ -26,7 +28,9 @@ const Formats = ({category: {category, loading}, doc: {doc}, getCategory, getDoc
                     <h4 className="center">제증명서 리스트</h4>
                 </li>
                 <Searchbar/>
-                <Accordion/>
+                <HashRouter>
+                    <Accordion/>
+                </HashRouter>
             </ul>
         </Fragment>
     );

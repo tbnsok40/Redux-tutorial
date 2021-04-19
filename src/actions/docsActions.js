@@ -3,7 +3,7 @@ import {
     UPDATE_DOCS,
     ADD_DOCS,
     DELETE_DOCS,
-    SET_LOADING, LOGS_ERROR, SEARCH_DOCS
+    SET_LOADING, LOGS_ERROR, SEARCH_DOCS, CLICK_DOCS
 } from './type'
 
 export const getDocs = () => async dispatch => {
@@ -51,6 +51,19 @@ export const searchDocs = (text) => async dispatch => {
     } catch (err) {
     }
 }
+
+export const clickedDocs = (id) => async dispatch => {
+    const res = await fetch(`/docs/${id}`);
+    const data = await res.json();
+    console.log("docs_id: ", data)
+    dispatch({
+        type: CLICK_DOCS,
+        payload: data
+    })
+
+
+}
+
 
 // set loading to Ture
 export const setLoading = () => {
