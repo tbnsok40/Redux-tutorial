@@ -2,7 +2,7 @@ import './App.css';
 import 'materialize-css/dist/css/materialize.min.css'
 import M from 'materialize-css/dist/js/materialize.min.js'
 import {useEffect, Fragment} from 'react';
-import Searchbar from './Components/layout/Searchbar'
+import Searchbar from './Components/layout/Certificate/Searchbar'
 import Logs from './Components/layout/Logs';
 import AddBtn from "./Components/layout/AddBtn";
 import AddLogModal2 from "./Components/layout/AddLogModal2";

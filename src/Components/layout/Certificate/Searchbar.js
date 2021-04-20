@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {searchDocs, getDocs} from "../../actions/docsActions";
+import {searchDocs, getDocs} from "../../../actions/docsActions";
 import {connect} from "react-redux";
 import PropTypes from 'prop-types';
 

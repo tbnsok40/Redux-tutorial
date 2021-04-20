@@ -7,7 +7,7 @@ import LogItem from "../LogItem";
 import Accordion from "../../Acc/Accordion";
 import M from 'materialize-css/dist/js/materialize.min'
 import {getDocs} from "../../../actions/docsActions";
-import Searchbar from "../Searchbar";
+import Searchbar from "./Searchbar";
 import {HashRouter} from "react-router-dom";
 import Paper from "./Paper";
 

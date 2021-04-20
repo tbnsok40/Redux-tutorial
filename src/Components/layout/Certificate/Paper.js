@@ -3,22 +3,19 @@ import {connect} from "react-redux";
 import {searchPatients} from "../../../actions/patientActions";
 import {clickedDocs} from "../../../actions/docsActions";
 
-const Paper = ({selectedPatients: {name, birth, id}, click, clickedDocs}) => {
+const Paper = ({selectedPatients: {name, birth, id}, click}) => {
     useEffect(() => {
         searchPatients();
-        // clickedDocs();
     }, [])
     return (
         <div>
-            {/* 제증명서 제목*/}
-            {/*{console.log(click.title)}*/}
             <br/>
+            {/* 제증명서 제목*/}
             <h1>제증명서: {click && click.title}</h1>
             <br/>
             <h4>성함: {name}</h4>
             <h4>환자번호: {id}</h4>
             <h4>생년월일: {birth}</h4>
-
         </div>
     )
 }

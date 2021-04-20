@@ -36,7 +36,7 @@ const Patient = ({name, selectedName, searchedPatients, getPatients, searchPatie
                             onChange={e => setCurrentName(e.target.value)}
                     >
                         <option value='' disabled>
-                            Select Category
+                            Select Patients
                         </option>
 
                         {/*{searchedPatients === null && name !== null && name.map(c =>*/}
