@@ -7,14 +7,14 @@ const AddBtn = () => {
             </a>
             <ul>
                 <li>
-                    <a href="#tech-list-modal" className="btn-floating green modal-trigger">
+                    <a href="#add-patient-modal" className="btn-floating green modal-trigger">
                         <i className="material-icons">person</i>
                     </a>
                 </li>
                 <li>
-                    <a href="#add-tech-modal" className="btn-floating red modal-trigger">
-                        <i className="material-icons">person_add</i>
-                    </a>
+                    {/*<a href="#add-tech-modal" className="btn-floating red modal-trigger">*/}
+                    {/*    <i className="material-icons">person_add</i>*/}
+                    {/*</a>*/}
                 </li>
             </ul>
         </div>

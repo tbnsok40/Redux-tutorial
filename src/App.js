@@ -17,6 +17,7 @@ import AddCertificateModal from "./Components/layout/Certificate/AddCertificateM
 import Accordion from './Components/Acc/Accordion'
 import Patient from "./Components/layout/Patients/Patients";
 import Paper from './Components/layout/Certificate/Paper'
+import AddPatientModal from "./Components/layout/Patients/AddPatientModal";
 
 const App = () => {
     useEffect(() => {
@@ -36,8 +37,10 @@ const App = () => {
 
                 {/*</div>*/}
 
-                <div className="main">
+                <AddPatientModal/>
 
+
+                <div className="main">
                     <div className="navbar-left">
                         <Formats/>
                         <AddCertificateModal/>
@@ -46,11 +49,11 @@ const App = () => {
                         <Patient/>
                         <Paper/>
                     </div>
-                    <AddBtn/>
+                <AddBtn/>
                 </div>
             </Fragment>
         </Provider>
-);
+    );
 }
 
 export default App;
