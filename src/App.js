@@ -18,21 +18,16 @@ import Accordion from './Components/Acc/Accordion'
 import Patient from "./Components/layout/Patients/Patients";
 import Paper from './Components/layout/Certificate/Paper'
 import AddPatientModal from "./Components/layout/Patients/AddPatientModal";
+import {BrowserRouter} from "react-router-dom";
 
 const App = () => {
     useEffect(() => {
             M.AutoInit();
         }
     )
-
     return (
         <Provider store={store}>
             <Fragment>
-                {/*<Logs/>*/}
-                {/*<AddLogModal2/>*/}
-                {/*<AddTechModal/>*/}
-                {/*<TechListModal/>*/}
-                {/*<EditLogModal/>*/}
                 <div className="main">
                     <div className="navbar-left">
                         <Formats/>
@@ -42,13 +37,13 @@ const App = () => {
                         <Patient/>
                         <Paper/>
                     </div>
-                <AddBtn/>
-                                <AddPatientModal/>
-
+                    <AddBtn/>
+                    <BrowserRouter>
+                        <AddPatientModal/>
+                    </BrowserRouter>
                 </div>
             </Fragment>
         </Provider>
     );
 }
-
 export default App;

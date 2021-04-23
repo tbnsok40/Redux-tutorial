@@ -11,3 +11,5 @@ npm i redux react-redux redux-thunk redux-devtools-extension
 - 내부에 index.js 생성
 
 - 환자 객체 post로 생성 --> db.json에 "patients":{} 만들지 않고, 곧바로 fetch 가능할까?
+
+(병원 개인정보동의서 발급 기능 => 발급된 서류는 어떻게 저장할 것인)
