@@ -19,7 +19,7 @@ export default (state = initialState, action) => {
         case ADD_DOCS:
             return {
                 ...state,
-                // doc: [...state.doc, action.payload],
+                doc: [...state.doc, action.payload], // 이게 주석 돼 있어서, 새로고침해야 추가가 됐던 것
                 loading: false
             }
         case SEARCH_DOCS:

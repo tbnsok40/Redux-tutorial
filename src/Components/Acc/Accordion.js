@@ -30,7 +30,6 @@ const CustomToggle = ({children, eventKey}) => {
 const Example = ({category: {category}, doc: {doc}, clickedDocs}) => {
     const onDocs = (tar) => {
         // Docs의 id 가져오기 성공 => onClick(e => onDocs(ts.id))
-        console.log(tar)
         clickedDocs(tar);
     }
     return (
@@ -47,7 +46,7 @@ const Example = ({category: {category}, doc: {doc}, clickedDocs}) => {
                                     (t.title === ts.category &&
                                         <Accordion.Collapse eventKey="0" key={ts.id}>
 
-                                             <Card.Body key={ts.id} onClick={e => onDocs(ts.id)}>{ts.title}</Card.Body>
+                                             <Card.Body key={ts.id} onClick={e => onDocs(ts.id)}>{ts.title} </Card.Body>
                                         </Accordion.Collapse>)
                                 )})}
                         </Card>

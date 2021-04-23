@@ -37,7 +37,6 @@ export const addDocs = (newTitle) => async dispatch => {
     })
 }
 
-
 // SearchDocs 값을 리듀서로 넘기면, state를 그 당시의 결과값만으로 치환하기에,
 // 그외의 제증명서들이 리스팅 되지 않은 것.
 export const searchDocs = (text) => async dispatch => {
@@ -55,15 +54,11 @@ export const searchDocs = (text) => async dispatch => {
 export const clickedDocs = (id) => async dispatch => {
     const res = await fetch(`/docs/${id}`);
     const data = await res.json();
-    console.log("docs_id: ", data)
     dispatch({
         type: CLICK_DOCS,
         payload: data
     })
-
-
 }
-
 
 // set loading to Ture
 export const setLoading = () => {

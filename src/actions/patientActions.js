@@ -1,7 +1,6 @@
 import {
     GET_PATIENTS,
     ADD_PATIENTS, SEARCH_DOCS, SEARCH_PATIENTS,SELECTED_PATIENTS
-
 } from "./type";
 
 export const getPatients = () => async dispatch => {
@@ -49,14 +48,10 @@ export const searchPatients = (text) => async dispatch => {
     }
 }
 
-
-
 export const selectedPatient = (id) => async dispatch => {
     try {
-        console.log("id: ", id)
         const res = await fetch(`/patients/${id}`);
         const data = await res.json()
-        console.log("data: ", data)
         dispatch({
             type: SELECTED_PATIENTS,
             payload: data

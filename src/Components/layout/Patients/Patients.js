@@ -16,7 +16,6 @@ const Patient = ({name, selectedName, searchedPatients, getPatients, searchPatie
     }
 
     const setCurrentName = (id) => {
-        console.log('target: ', id)
         setCurrent(id)
         // selectedName = name
         selectedPatient(id) // 여기에 id를 넘기면 다 해결돼. name 파라미터 대신 id값을 가져올 것. but how?
@@ -33,8 +32,8 @@ const Patient = ({name, selectedName, searchedPatients, getPatients, searchPatie
                             value={current}
                             key={current}
                             className='browser-default'
-                            onChange={e => setCurrentName(e.target.value)}
-                    >
+                            onChange={e => setCurrentName(e.target.value)}>
+
                         <option value='' disabled>
                             Select Patients
                         </option>
@@ -47,7 +46,7 @@ const Patient = ({name, selectedName, searchedPatients, getPatients, searchPatie
 
                         {searchedPatients !== null && searchedPatients.map(c =>
                             <option value={c.id} key={c.id}>
-                                {c.name}
+                                {c.name} {c.birth}
                             </option>
                         )}
                     </select>

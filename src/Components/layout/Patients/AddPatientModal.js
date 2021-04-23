@@ -1,7 +1,9 @@
 import React, {useState} from "react";
 // import M from 'materialize-css/dist/js/materialize.min.js'
+import { addPatients } from "../../../actions/patientActions";
+import {connect} from "react-redux";
 
-const AddPatientModal = () => {
+const AddPatientModal = ({addPatients}) => {
     const [inputs, setInputs] = useState({
         name: '', birth: '', code: '', phone: ''
     });
@@ -18,11 +20,8 @@ const AddPatientModal = () => {
     };
 
     const onClick = () => {
-        console.log(inputs)
+        addPatients(inputs)
     }
-
-
-
 
     return (
         <div id="add-patient-modal" className="modal center-sheet" style={{width: '600px', height: '900px'}}>
@@ -71,4 +70,4 @@ const AddPatientModal = () => {
     )
 }
 
-export default AddPatientModal;
+export default connect(null, {addPatients}) (AddPatientModal);

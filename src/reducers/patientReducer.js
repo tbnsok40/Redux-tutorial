@@ -1,4 +1,5 @@
 import {
+    ADD_PATIENTS,
     GET_PATIENTS, SEARCH_PATIENTS, SELECTED_PATIENTS
 } from "../actions/type";
 
@@ -9,8 +10,6 @@ const initialState = {
     searchedPatients: null,
     selectedName: '',
     selectedPatients: ''
-
-
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -29,6 +28,12 @@ export default (state = initialState, action) => {
                 searchedPatients: action.payload
             })
 
+        case ADD_PATIENTS:
+            return({
+                ...state,
+                name: [...state, action.payload]
+
+            })
         case SELECTED_PATIENTS:
             return ({
                 ...state,

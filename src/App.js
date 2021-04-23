@@ -28,18 +28,11 @@ const App = () => {
     return (
         <Provider store={store}>
             <Fragment>
-                {/*<div className="navbar-left">*/}
                 {/*<Logs/>*/}
                 {/*<AddLogModal2/>*/}
                 {/*<AddTechModal/>*/}
                 {/*<TechListModal/>*/}
                 {/*<EditLogModal/>*/}
-
-                {/*</div>*/}
-
-                <AddPatientModal/>
-
-
                 <div className="main">
                     <div className="navbar-left">
                         <Formats/>
@@ -50,6 +43,8 @@ const App = () => {
                         <Paper/>
                     </div>
                 <AddBtn/>
+                                <AddPatientModal/>
+
                 </div>
             </Fragment>
         </Provider>
