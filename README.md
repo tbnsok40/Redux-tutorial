@@ -16,14 +16,14 @@ npm i redux react-redux redux-thunk redux-devtools-extension
 
 -
 
-#### State is immutable, that's the rule of redux.
+### State is immutable, that's the rule of redux.
 Mutaion in state is not recommended.
 
 Instead mutating the state, just return another object. for example using filter method in array state is a. good method to delete some elements in array. Because filter() method just return a new state(array) instead mutate a state.
 
 
 
-#### Redux is just a function. 
+### Redux is just a function. 
 Dispatching actions, and modifying the data(states) through the actions.
 
 it is good to separate functions as its minimum responsiblity, dispatchors should only perform dispatching actions, and those actions will get an action type and data(payload).
