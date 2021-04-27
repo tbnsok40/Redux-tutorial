@@ -23,3 +23,5 @@ delete error 시 휴지통 버튼 클릭 후 바로 로그가 지워지지 않�
   <img alt="Redux" src="https://img.shields.io/badge/-Redux-764ABC?logo=redux&logoColor=white" />
   <img alt="Markdown" src="https://img.shields.io/badge/Markdown-000?logo=markdown&logoColor=white"/>
   <img alt="machine-learning" src="https://img.shields.io/badge/MachineLearning-000?logo=machinelearning&logoColor=white"/>
+
+

@@ -10,7 +10,6 @@ const Paper = ({selectedPatients: {name, birth, id}, click}) => {
     return (
         <div>
             <br/>
-            {/* 제증명서 제목*/}
             <h1>제증명서: {click && click.title}</h1>
             <br/>
             <h4>성함: {name}</h4>
