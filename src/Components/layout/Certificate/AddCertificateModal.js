@@ -26,11 +26,11 @@ const AddCertificateModal = ({category: {category}, getDocs, getCategory, addDoc
         setTitle('');
     }
     return (
-        <div id="add-title-modal" className="modal bottom-sheet">
+        <div id="add-title-modal" className="modal bottom-sheet" style={{background: "#FFFFFF"}}>
             <div className="modal-content">
-                <h4>Enter Category and Document</h4>
+                <h4 style={{background: "#FFFFFF"}}>Enter Category and Document</h4>
 
-                <div className="row">
+                <div className="row" style={{background: "#FFFFFF"}}>
                     <div className="input-field">
                         <select name="category" className='browser-default'
                                 value={currcategory}
@@ -49,10 +49,10 @@ const AddCertificateModal = ({category: {category}, getDocs, getCategory, addDoc
                     </div>
                 </div>
 
-                <div className="row">
-                    <div className="input-field" style={{width: "600px"}}>
-                        <input type="text" name="message" value={title} onChange={e => setTitle(e.target.value)}/>
-                        <label htmlFor="message" className='active'>Title</label>
+                <div className="row" style={{background: "#FFFFFF"}}>
+                    <div className="input-field" style={{width: "600px", background: "#FFFFFF"}}>
+                        <input type="text" name="message" value={title} onChange={e => setTitle(e.target.value)} />
+                        <label htmlFor="message" className='active' style={{background: "#FFFFFF"}}>Title</label>
                     </div>
                 </div>
 

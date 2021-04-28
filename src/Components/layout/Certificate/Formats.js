@@ -11,6 +11,15 @@ import Searchbar from "./Searchbar";
 import {HashRouter} from "react-router-dom";
 import Paper from "./Paper";
 
+const formatStyle = {
+    border: "0px",
+    width: "350px",
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    alignItems: "center"
+}
+
 const Formats = ({category: {category, loading}, doc: {doc}, getCategory, getDocs}) => {
 
     useEffect(() => {
@@ -23,9 +32,11 @@ const Formats = ({category: {category, loading}, doc: {doc}, getCategory, getDoc
     }
     return (
         <Fragment>
-            <ul className="collection with-header">
-                <li className="collection-header">
-                    <h4 className="center">제증명서 리스트</h4>
+            <ul className="collection with-header"
+                style={formatStyle}
+            >
+                <li className="collection-header" style={{background: "transparent"}}>
+                    <h1 className="center" style={{background: "transparent"}}>제증명서 리스트</h1>
                 </li>
                 <Searchbar/>
                 <HashRouter>

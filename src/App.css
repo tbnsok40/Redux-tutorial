@@ -47,7 +47,11 @@
 }
 
 .main{
-  width: 1400px;
+  margin-top: 60px;
+  width: 1200px;
   display: flex;
   justify-content: space-evenly;
+}
+*{
+  background-color: #8daeec;
 }

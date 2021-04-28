@@ -5,16 +5,13 @@ const AddBtn = () => {
     // const blueBtn2 = blueBtn
     const Event = {
         Hover: function (target) {
-            console.log('tar: ', target)
             // const blueBtn = document.getElementById("add")
             // const icon = document.querySelector("i")
             target.classList.value = ''
             target.style.fontSize = "4px"
-            console.log(target.style)
             target.innerHTML = "Docs"
         },
         Leave: function (target) {
-            console.log('tar: ', target)
             target.classList.value = 'large material-icons'
             target.style.fontSize = "30px"
             target.innerHTML = "add"

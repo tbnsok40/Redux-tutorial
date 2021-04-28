@@ -24,15 +24,14 @@ const AddPatientModal = ({addPatients}) => {
     };
     const changePage = (num) => {
         setCurrPage(num);
-        console.log(currPage)
     }
     return (
         <div id="add-patient-modal" className="modal center-sheet" style={{width: '600px', height: '900px'}}>
             <div className="modal-content"
                  style={{padding: '20px 30px 0 30px ', display: 'flex', justifyContent: 'space-between'}}>
-                <div className="titles" style={{display: 'flex', justifyContent: 'space-between'}}>
-                        <h4 className="blue-text text-darken-1" onClick={() => changePage('1')}>Enter Patient info</h4>
-                        <h4 className="blue-text text-darken-1" onClick={() => changePage('2')}>See All Patient info</h4>
+                <div className="titles" style={{display: 'flex', justifyContent: 'space-between', background: "none"}}>
+                        <h4 style ={{background: "none"}} className="blue-text text-darken-1" onClick={() => changePage('1')}>Enter Patient info</h4>
+                        <h4 style ={{background: "none"}} className="blue-text text-darken-1" onClick={() => changePage('2')}>See All Patient info</h4>
                 </div>
                 {/* currPage 라는 state 의 변화로 컴포넌트 분기처리*/}
                 {currPage === '1' && <AddPatientForm/>}

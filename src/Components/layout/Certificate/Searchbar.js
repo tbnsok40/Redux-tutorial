@@ -13,17 +13,17 @@ const Searchbar = ({searchDocs, getDocs}) => {
         getDocs();
     }
     return (
-        <nav style={{marginBottom: '30px'}} className="blue">
-            <div className="nav-wrapper">
-                <form>
-                    <div className="input-field">
+        <nav style={{marginTop: '20px',marginBottom: '30px', width: "85%"}} className="transparent">
+            <div className="nav-wrapper" style={{width: "100%", background: "transparent"}}>
+                <form >
+                    <div className="input-field" style={{boxShadow: "inset 5px 5px 5px #718bbd, inset -4px -4px 4px #a9d1ff"}}>
                         <input id="search" type="search" placeholder="Search Docs.."
                                ref={text}
                                onChange={onChange}/>
                         <label className="label-icon" htmlFor="search">
-                            <i className="material-icons">search</i>
+                            <i className="material-icons" style={{height:"0px"}}>search</i>
                         </label>
-                        <i className="material-icons" onClick={onclick}>close </i>
+                        <i className="material-icons" style={{height:"0px"}} onClick={onclick}>close </i>
                     </div>
                 </form>
             </div>

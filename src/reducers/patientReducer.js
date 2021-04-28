@@ -9,7 +9,8 @@ const initialState = {
     loading: false,
     searchedPatients: null,
     selectedName: '',
-    selectedPatients: ''
+    selectedPatients: '',
+    patient: null
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -18,7 +19,7 @@ export default (state = initialState, action) => {
         case GET_PATIENTS:
             return ({
                 ...state,
-                name: action.payload,
+                patient: action.payload,
                 loading: false
             })
 

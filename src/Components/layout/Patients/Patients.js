@@ -21,38 +21,46 @@ const Patient = ({name, selectedName, searchedPatients, getPatients, searchPatie
         selectedPatient(id) // 여기에 id를 넘기면 다 해결돼. name 파라미터 대신 id값을 가져올 것. but how?
     }
 
+    const onclick = () => {
+        text.current.value = '';
+    }
+
     return (
-        <div className="SearchPatientTab">
-            <div className="">
-                <div className="input-field">
+        <nav style={{marginTop: '20px', marginBottom: '90px', width: "100%"}} className="transparent">
+            <div className="nav-wrapper" style={{width: "100%", background: "transparent"}}>
+                <form>
+                    <div className="input-field"
+                         style={{boxShadow: "inset 5px 5px 5px #718bbd, inset -4px -4px 4px #a9d1ff"}}>
+                        <input id="search" ref={text}
+                               type="search"
+                               onChange={onChange}
+                               placeholder="Search Patients..."/>
+                        <label className="label-icon" htmlFor="search" style={{background: "none", width: "10px"}}>
+                            <i className="material-icons" style={{color: "white", height: "0px"}}>search</i>
+                        </label>
+                        <i className="material-icons" style={{height: "0px"}} onClick={onclick}>close </i>
+                    </div>
+                </form>
 
-                    <input ref={text} type="text" onChange={onChange}/>
+                <select name="category"
+                        value={current}
+                        key={current}
+                        className='browser-default'
+                        style={{marginTop:"15px", width:"100%"}}
+                        onChange={e => setCurrentName(e.target.value)}
+                >
 
-                    <select name="category"
-                            value={current}
-                            key={current}
-                            className='browser-default'
-                            onChange={e => setCurrentName(e.target.value)}>
-
-                        <option value='' disabled>
-                            Select Patients
+                    <option value='' disabled>
+                        Select Patients
+                    </option>
+                    {searchedPatients !== null && searchedPatients.map(c =>
+                        <option value={c.id} key={c.id}>
+                            {c.name} {c.birth}
                         </option>
-
-                        {/*{searchedPatients === null && name !== null && name.map(c =>*/}
-                        {/*    <option value={c.name} key={c.id}>*/}
-                        {/*        {c.name}*/}
-                        {/*    </option>*/}
-                        {/*)}*/}
-
-                        {searchedPatients !== null && searchedPatients.map(c =>
-                            <option value={c.id} key={c.id}>
-                                {c.name} {c.birth}
-                            </option>
-                        )}
-                    </select>
-                </div>
+                    )}
+                </select>
             </div>
-        </div>
+        </nav>
     );
 }
 

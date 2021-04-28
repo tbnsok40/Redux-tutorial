@@ -26,7 +26,13 @@ const CustomToggle = ({children, eventKey}) => {
         </button>
     );
 }
-
+const accordionStyle = {
+    width: "280px",
+    border: "none",
+    // background: "#8daeec",
+    boxShadow:  " -10px -1px 21px #728dbf,\n" +
+        "             10px 1px 23px #a8cfff"
+}
 const Example = ({category: {category}, doc: {doc}, clickedDocs}) => {
     const onDocs = (tar) => {
         // Docs의 id 가져오기 성공 => onClick(e => onDocs(ts.id))
@@ -37,16 +43,15 @@ const Example = ({category: {category}, doc: {doc}, clickedDocs}) => {
             {category !== undefined && category.map(t => {
                 return (
                     <Accordion defaultActiveKey="0" key={t.id}>
-                        <Card>
-                            <Card.Header>
-                                <CustomToggle eventKey="0">{t.title}</CustomToggle>
-                            </Card.Header>
+                        <Card style={accordionStyle}>
+                            {/*<Card.Header style={{width: "100%", height: "30px"}}>*/}
+                                <CustomToggle eventKey="0" >{t.title}</CustomToggle>
+                            {/*</Card.Header>*/}
                             {t.title && doc !== null && doc.map(ts => {
                                 return (
                                     (t.title === ts.category &&
-                                        <Accordion.Collapse eventKey="0" key={ts.id}>
-
-                                             <Card.Body key={ts.id} onClick={e => onDocs(ts.id)}>{ts.title} </Card.Body>
+                                        <Accordion.Collapse eventKey="0" key={ts.id} style={{borderBottom:"1px solid #6493ea",background: "#8daeec"}}>
+                                            <Card.Body key={ts.id} onClick={e => onDocs(ts.id)}>{ts.title} </Card.Body>
                                         </Accordion.Collapse>)
                                 )})}
                         </Card>
