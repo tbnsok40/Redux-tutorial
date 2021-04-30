@@ -4,6 +4,8 @@ import {getDocs, addDocs} from '../../../actions/docsActions'
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 import M from 'materialize-css/dist/js/materialize.min.js'
+import AddCertificate from "../Patients/AddCertificate";
+import EditCertificate from "../Patients/EditCertificate";
 
 const AddCertificateModal = ({category: {category}, getDocs, getCategory, addDocs}) => {
     useEffect(() => {
@@ -13,54 +15,33 @@ const AddCertificateModal = ({category: {category}, getDocs, getCategory, addDoc
 
     const [title, setTitle] = useState('');
     const [currcategory, setCurrcategory] = useState('');
+    const [currPage, setCurrPage] = useState("1")
     const onSubmit = () => {
         const category = currcategory
-
         const newTitle = {
             category,
             title
         }
         addDocs(newTitle);
         M.toast({html: `titles added in ${category}`})
-
         setTitle('');
     }
+    const changePage = (num) => {
+        setCurrPage(num);
+    }
     return (
-        <div id="add-title-modal" className="modal bottom-sheet" style={{background: "#FFFFFF"}}>
+        <div id="add-title-modal" className="modal center-sheet"
+             style={{background: "#FFFFFF", width: '600px', height: '900px'}}>
             <div className="modal-content">
-                <h4 style={{background: "#FFFFFF"}}>Enter Category and Document</h4>
-
-                <div className="row" style={{background: "#FFFFFF"}}>
-                    <div className="input-field">
-                        <select name="category" className='browser-default'
-                                value={currcategory}
-                                onChange={e => setCurrcategory(e.target.value)}>
-                            >
-                            <option value='' disabled>
-                                Select Category
-                            </option>
-
-                            {category !== null && category.map(c =>
-                                <option value={c.title} key={c.id}>
-                                    {c.title}
-                                </option>
-                            )}
-                        </select>
-                    </div>
+                <div className="subtitle"
+                     style={{background: "#FFFFFF", display: "flex", justifyContent: "space-between"}}>
+                    <h4 style={{background: "#FFFFFF"}} onClick={() => changePage('1')}>Enter Category and Document</h4>
+                    <h6 style={{background: "#FFFFFF"}} onClick={() => changePage('2')}>Edit Category and Document</h6>
                 </div>
 
-                <div className="row" style={{background: "#FFFFFF"}}>
-                    <div className="input-field" style={{width: "600px", background: "#FFFFFF"}}>
-                        <input type="text" name="message" value={title} onChange={e => setTitle(e.target.value)} />
-                        <label htmlFor="message" className='active' style={{background: "#FFFFFF"}}>Title</label>
-                    </div>
-                </div>
+                {currPage === "1" && <AddCertificate/>}
+                {currPage === "2" && <EditCertificate/>}
 
-
-                <div className="modal-footer">
-                    <a href="#!" onClick={onSubmit}
-                       className="modal-close waves-effect waves-blue waves-green btn">Enter</a>
-                </div>
             </div>
         </div>
     );

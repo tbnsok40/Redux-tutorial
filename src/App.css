@@ -1,57 +1,60 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
-*{
-  box-sizing: border-box;
+
+* {
+    box-sizing: border-box;
 }
+
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  /*flex-direction: column;*/
-  /*align-items: center;*/
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
-.navbar-left{
-  width: 300px;
-  /*display: flex;*/
-  /*justify-content: space-evenly;*/
+.navbar-left {
+    width: 300px;
+    /*display: flex;*/
+    /*justify-content: space-evenly;*/
 }
 
-.navbar-center{
-  width: 900px;
-  height: 300px;
-  /*display: flex;*/
-  /*justify-content: space-evenly;*/
+.navbar-center {
+    width: 900px;
+    height: 300px;
+    /*display: flex;*/
+    /*justify-content: space-evenly;*/
 }
 
-.names{
-  width: 400px;
-}
-.SearchPatientTab{
-
+.names {
+    width: 400px;
 }
 
-.main{
-  margin-top: 60px;
-  width: 1200px;
-  display: flex;
-  justify-content: space-evenly;
+.main {
+    margin-top: 60px;
+    width: 1200px;
+    display: flex;
+    justify-content: space-evenly;
 }
-*{
-  background-color: #8daeec;
+
+* {
+    background-color: #8daeec;
+    /*font-family: 'Nanum Gothic Coding', monospace;*/
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: 800;
 }

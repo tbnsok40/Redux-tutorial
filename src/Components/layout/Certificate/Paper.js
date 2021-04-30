@@ -33,8 +33,7 @@ const Paper = ({selectedPatients: {name, birth, id}, click}) => {
                 </tr>
                 <tr style={{height: "300px"}}>
                     <td>의사소견 :</td>
-                    <td></td>
-                    <td></td>
+                    <td colSpan="2"><textarea name="" id="" cols="20" rows="10"/></td>
                 </tr>
             </table>
         </div>

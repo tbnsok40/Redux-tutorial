@@ -1,4 +1,4 @@
-import {ADD_DOCS, GET_DOCS, SEARCH_DOCS, CLICK_DOCS} from "../actions/type";
+import {ADD_DOCS, GET_DOCS, SEARCH_DOCS, CLICK_DOCS, UPDATE_DOCS} from "../actions/type";
 
 const initialState = {
     doc: null,
@@ -28,10 +28,15 @@ export default (state = initialState, action) => {
                 doc: action.payload
             }
         case CLICK_DOCS:
-            return{
+            return {
                 ...state,
                 click: action.payload
                 // doc: action.payload
+            }
+        case UPDATE_DOCS:
+            return {
+                ...state,
+                doc: state.doc.map(dc => dc.i === action.payload.id ? action.payload : dc)
             }
         default:
             return state

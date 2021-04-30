@@ -22,12 +22,32 @@ export const getDocs = () => async dispatch => {
     }
 }
 
+export const updateDocs = (doc) => async dispatch => {
+    try {
+        const res = await fetch((`/docs/ + ${doc.id}`), {
+            method: "PUT", headers: {"Content-Type": "application/json:", body: JSON.stringify(doc)}
+        })
+        const data = res.json();
+        dispatch({
+            type: UPDATE_DOCS,
+            payload: data
+        })
+    }catch (err) {
+        dispatch({
+            type: UPDATE_DOCS,
+            payload: err.response
+        })
+    }
+
+
+}
+
 export const addDocs = (newTitle) => async dispatch => {
     const res = await fetch('/docs', {
         method: "POST",
         body: JSON.stringify(newTitle),
         headers: {
-            "Content-Type":"application/json"
+            "Content-Type": "application/json"
         }
     });
     const data = await res.json()

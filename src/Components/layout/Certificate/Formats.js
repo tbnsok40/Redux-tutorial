@@ -10,6 +10,7 @@ import {getDocs} from "../../../actions/docsActions";
 import Searchbar from "./Searchbar";
 import {HashRouter} from "react-router-dom";
 import Paper from "./Paper";
+import EditCertificateModal from "../Patients/EditCertificate";
 
 const formatStyle = {
     border: "0px",
