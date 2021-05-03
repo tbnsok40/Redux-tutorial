@@ -1,4 +1,4 @@
-import {ADD_DOCS, GET_DOCS, SEARCH_DOCS, CLICK_DOCS, UPDATE_DOCS} from "../actions/type";
+import {ADD_DOCS, GET_DOCS, SEARCH_DOCS, CLICK_DOCS, UPDATE_DOCS, DELETE_DOCS} from "../actions/type";
 
 const initialState = {
     doc: null,
@@ -38,6 +38,12 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 doc: state.doc.map(dc => dc.id === action.payload ? action.payload : dc)
+            }
+        case DELETE_DOCS:
+            console.log("delete");
+            return{
+                ...state,
+                doc: state.doc.filter(dc => dc.id !== action.payload)
             }
         default:
             return state

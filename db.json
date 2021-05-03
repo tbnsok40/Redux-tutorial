@@ -103,23 +103,7 @@
       "title": "신청서"
     }
   ],
-  "docs": [
-    {
-      "id": 14,
-      "title": "수술 의뢰서",
-      "category": "의뢰서"
-    },
-    {
-      "id": 15,
-      "title": "234234234",
-      "category": "진단서"
-    },
-    {
-      "category": "의뢰서",
-      "title": "내진 의뢰서",
-      "id": 16
-    }
-  ],
+  "docs": [],
   "patients": [
     {
       "id": 1,

@@ -74,6 +74,21 @@ export const searchDocs = (text) => async dispatch => {
     }
 }
 
+
+export const deleteDocs = (id) => async dispatch => {
+    try{
+        await fetch(`/docs/${id}`, {
+            method: "DELETE"
+        });
+        dispatch({
+            type: DELETE_DOCS,
+            payload: id
+        })
+    }catch (err){
+
+    }
+}
+
 export const clickedDocs = (id) => async dispatch => {
     const res = await fetch(`/docs/${id}`);
     const data = await res.json();

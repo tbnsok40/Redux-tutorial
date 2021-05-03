@@ -1,11 +1,11 @@
 import React, {Fragment, useEffect, useRef, useState} from "react";
 import {getCategory} from "../../../actions/categoryActions";
-import {getDocs, addDocs, updateDocs} from '../../../actions/docsActions'
+import {getDocs, addDocs, updateDocs, deleteDocs} from '../../../actions/docsActions'
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 import M from 'materialize-css/dist/js/materialize.min.js'
 
-const EditCertificate = ({category: {category}, doc: {doc}, getDocs, getCategory, addDocs, updateDocs}) => {
+const EditCertificate = ({category: {category}, doc: {doc}, getDocs, getCategory, addDocs, updateDocs, deleteDocs}) => {
     useEffect(() => {
         getCategory();
         getDocs();
@@ -35,6 +35,9 @@ const EditCertificate = ({category: {category}, doc: {doc}, getDocs, getCategory
     const changePage = (num) => {
         setCurrPage(num);
     }
+    const onDelete = (id) => {
+        deleteDocs(id);
+    }
 
     // 컴포넌트가 2개의 역할을 다해서 문제 ==> 분리 해야한다 => 조회와 수정
     return (
@@ -45,15 +48,17 @@ const EditCertificate = ({category: {category}, doc: {doc}, getDocs, getCategory
                     <div id={dc.id}>
                         <span id={dc.id}>{dc.title} </span>
                         <button id={dc.id} onClick={(e) => setEdit(dc.id)} style={{border: "none"}}>EDIT</button>
+                        <button id={dc.id} onClick={(e) => onDelete(dc.id)} style={{border: "none"}}>DELETE</button>
                     </div>)
                     ||
-                    (edit === dc.id ? <div style={{display:"flex"}} id={dc.id}>
-                            <input type="text" style={{width:"200px"}} ref={text}/> <button style={{width:"50px", border:"none"}} onClick={() => onSubmit(dc)}>완료</button>
-                    </div> :
-                    <div id={dc.id}>
-                        <span id={dc.id}>{dc.title} </span>
-                        <button id={dc.id} onClick={(e) => setEdit(dc.id)} style={{border: "none"}}>EDIT</button>
-                    </div>)
+                    (edit === dc.id ? <div style={{display: "flex"}} id={dc.id}>
+                            <input type="text" style={{width: "200px"}} ref={text}/>
+                            <button style={{width: "50px", border: "none"}} onClick={() => onSubmit(dc)}>완료</button>
+                        </div> :
+                        <div id={dc.id}>
+                            <span id={dc.id}>{dc.title} </span>
+                            <button id={dc.id} onClick={(e) => setEdit(dc.id)} style={{border: "none"}}>EDIT</button>
+                        </div>)
             })}
 
             {/*{doc && doc.map(dc =>*/}
@@ -78,5 +83,5 @@ EditCertificate.propTypes = {
     getCategory: PropTypes.func.isRequired,
     getDocs: PropTypes.func.isRequired,
 }
-export default connect(mapStateToProps, {getCategory, addDocs, getDocs, updateDocs})(EditCertificate);
+export default connect(mapStateToProps, {getCategory, addDocs, getDocs, updateDocs, deleteDocs})(EditCertificate);
 
