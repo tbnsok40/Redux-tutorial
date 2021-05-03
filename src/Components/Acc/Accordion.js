@@ -54,8 +54,10 @@ const Example = ({category: {category}, doc: {doc}, clickedDocs}) => {
                                             borderBottom: "1px solid #6493ea",
                                             background: "#8daeec"
                                         }}>
-                                            <Card.Body style={{display: "flex", justifyContent: "space-between"}}
-                                                       key={ts.id} onClick={() => onDocs(ts.id)}>
+                                            <Card.Body style={{display: "flex", justifyContent: "space-between", cursor:"pointer"}}
+                                                       key={ts.id} onClick={() => onDocs(ts.id)}
+                                                       onMouseOver = {()=>{}}
+                                            >
                                                 {ts.title}
                                             </Card.Body>
                                         </Accordion.Collapse>)

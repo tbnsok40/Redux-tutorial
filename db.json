@@ -105,24 +105,14 @@
   ],
   "docs": [
     {
-      "id": 1,
-      "title": "제대로된 의뢰서2342134234",
-      "category": "의뢰서"
-    },
-    {
       "id": 2,
       "title": "bb 확인서 에딧12",
       "category": "확인서"
     },
     {
-      "id": 3,
-      "title": "cc 진단서 에딕3213",
-      "category": "진단서"
-    },
-    {
-      "category": "소견서",
-      "title": "aa 소견서",
-      "id": 4
+      "id": 4,
+      "title": "3",
+      "category": "소견서"
     },
     {
       "category": "확인서",
