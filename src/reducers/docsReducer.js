@@ -34,9 +34,10 @@ export default (state = initialState, action) => {
                 // doc: action.payload
             }
         case UPDATE_DOCS:
+            console.log(action.payload)
             return {
                 ...state,
-                doc: state.doc.map(dc => dc.i === action.payload.id ? action.payload : dc)
+                doc: state.doc.map(dc => dc.id === action.payload ? action.payload : dc)
             }
         default:
             return state

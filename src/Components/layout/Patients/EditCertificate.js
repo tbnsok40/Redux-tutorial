@@ -1,15 +1,17 @@
-import React, {Fragment, useEffect, useState} from "react";
+import React, {Fragment, useEffect, useRef, useState} from "react";
 import {getCategory} from "../../../actions/categoryActions";
-import {getDocs, addDocs} from '../../../actions/docsActions'
+import {getDocs, addDocs, updateDocs} from '../../../actions/docsActions'
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 import M from 'materialize-css/dist/js/materialize.min.js'
 
-const EditCertificate = ({category: {category}, doc: {doc}, getDocs, getCategory, addDocs}) => {
+const EditCertificate = ({category: {category}, doc: {doc}, getDocs, getCategory, addDocs, updateDocs}) => {
     useEffect(() => {
         getCategory();
         getDocs();
     }, [])
+
+    const text = useRef();
     const [title, setTitle] = useState('');
     const [currcategory, setCurrcategory] = useState('');
     const [currPage, setCurrPage] = useState("1")
@@ -18,22 +20,23 @@ const EditCertificate = ({category: {category}, doc: {doc}, getDocs, getCategory
 
     // 간만에 보는 에러, 클릭의 결과가 한 템포 늦게 출력된다. 아오
     const editState = (id) => {
-        console.log(id)
     }
 
-    const onSubmit = () => {
-        const category = currcategory
-        const newTitle = {
-            category,
-            title
+    const onSubmit = (dc) => {
+        const newDocs = {
+            id: dc.id,
+            title: text.current.value,
+            category: dc.category
         }
-        addDocs(newTitle);
-        M.toast({html: `titles added in ${category}`})
-        setTitle('');
+        updateDocs(newDocs);
+        setEdit(false);
+        getDocs();
     }
     const changePage = (num) => {
         setCurrPage(num);
     }
+
+    // 컴포넌트가 2개의 역할을 다해서 문제 ==> 분리 해야한다 => 조회와 수정
     return (
         <Fragment>
 
@@ -44,7 +47,9 @@ const EditCertificate = ({category: {category}, doc: {doc}, getDocs, getCategory
                         <button id={dc.id} onClick={(e) => setEdit(dc.id)} style={{border: "none"}}>EDIT</button>
                     </div>)
                     ||
-                    (edit === dc.id ? <div>{edit}</div> :
+                    (edit === dc.id ? <div style={{display:"flex"}} id={dc.id}>
+                            <input type="text" style={{width:"200px"}} ref={text}/> <button style={{width:"50px", border:"none"}} onClick={() => onSubmit(dc)}>완료</button>
+                    </div> :
                     <div id={dc.id}>
                         <span id={dc.id}>{dc.title} </span>
                         <button id={dc.id} onClick={(e) => setEdit(dc.id)} style={{border: "none"}}>EDIT</button>
@@ -58,7 +63,6 @@ const EditCertificate = ({category: {category}, doc: {doc}, getDocs, getCategory
             {/*    </div>)*/}
             {/*)}*/}
 
-            {console.log(edit)}
         </Fragment>)
         ;
 }
@@ -74,5 +78,5 @@ EditCertificate.propTypes = {
     getCategory: PropTypes.func.isRequired,
     getDocs: PropTypes.func.isRequired,
 }
-export default connect(mapStateToProps, {getCategory, addDocs, getDocs})(EditCertificate);
+export default connect(mapStateToProps, {getCategory, addDocs, getDocs, updateDocs})(EditCertificate);
 

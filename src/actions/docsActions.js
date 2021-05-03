@@ -24,15 +24,18 @@ export const getDocs = () => async dispatch => {
 
 export const updateDocs = (doc) => async dispatch => {
     try {
-        const res = await fetch((`/docs/ + ${doc.id}`), {
-            method: "PUT", headers: {"Content-Type": "application/json:", body: JSON.stringify(doc)}
+        console.log(doc, doc.id)
+        const res = await fetch((`/docs/${doc.id}`), {
+            method: "PUT",
+            body: JSON.stringify(doc),
+            headers: {"Content-Type": "application/json"}, // 여기 조금이라도 오타 생기면 method 오작동.
         })
-        const data = res.json();
+        const data = await res.json();
         dispatch({
             type: UPDATE_DOCS,
             payload: data
         })
-    }catch (err) {
+    } catch (err) {
         dispatch({
             type: UPDATE_DOCS,
             payload: err.response

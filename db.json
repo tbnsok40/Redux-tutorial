@@ -105,59 +105,19 @@
   ],
   "docs": [
     {
-      "id": 1,
-      "category": "의뢰서",
-      "title": "진료의뢰서"
+      "id": 14,
+      "title": "수술 의뢰서",
+      "category": "의뢰서"
     },
     {
-      "id": 2,
-      "category": "확인서",
-      "title": "수술 확인서"
-    },
-    {
-      "category": "확인서",
-      "title": "진단 확인서",
-      "id": 4
-    },
-    {
-      "category": "소견서",
-      "title": "수석 소견서",
-      "id": 6
-    },
-    {
-      "category": "증명서",
-      "title": "책임 증명서",
-      "id": 8
-    },
-    {
-      "category": "소견서",
-      "title": "지슈 소견서",
-      "id": 9
-    },
-    {
-      "category": "의뢰서",
-      "title": "수술의뢰서",
-      "id": 14
-    },
-    {
-      "category": "진단서",
-      "title": "질병 진단서",
-      "id": 15
+      "id": 15,
+      "title": "234234234",
+      "category": "진단서"
     },
     {
       "category": "의뢰서",
       "title": "내진 의뢰서",
       "id": 16
-    },
-    {
-      "category": "확인서",
-      "title": "수석 확인서",
-      "id": 17
-    },
-    {
-      "category": "",
-      "title": "",
-      "id": 18
     }
   ],
   "patients": [
