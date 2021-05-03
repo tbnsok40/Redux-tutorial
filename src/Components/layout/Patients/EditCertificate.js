@@ -32,8 +32,9 @@ const EditCertificate = ({category: {category}, doc: {doc}, getDocs, getCategory
         setEdit(false);
         getDocs();
     }
-    const changePage = (num) => {
-        setCurrPage(num);
+    const changeEdit = (doc) => {
+        setEdit(doc.id);
+        setTitle(doc.title)
     }
     const onDelete = (id) => {
         deleteDocs(id);
@@ -41,35 +42,28 @@ const EditCertificate = ({category: {category}, doc: {doc}, getDocs, getCategory
 
     // 컴포넌트가 2개의 역할을 다해서 문제 ==> 분리 해야한다 => 조회와 수정
     return (
-        <Fragment>
-
+        <div>
             {doc && doc.map(dc => {
                 return (!edit &&
-                    <div id={dc.id}>
+                    <div id={dc.id} style={{display: "flex", justifyContent: "space-between"}}>
                         <span id={dc.id}>{dc.title} </span>
-                        <button id={dc.id} onClick={(e) => setEdit(dc.id)} style={{border: "none"}}>EDIT</button>
-                        <button id={dc.id} onClick={(e) => onDelete(dc.id)} style={{border: "none"}}>DELETE</button>
+                        <div>
+                            <button id={dc.id} onClick={(e) => changeEdit(dc)} style={{border: "none"}}>EDIT
+                            </button>
+                            <button id={dc.id} onClick={(e) => onDelete(dc.id)} style={{border: "none"}}>DELETE
+                            </button>
+                        </div>
                     </div>)
                     ||
-                    (edit === dc.id ? <div style={{display: "flex"}} id={dc.id}>
-                            <input type="text" style={{width: "200px"}} ref={text} value={dc.title}/>
-                            <button style={{width: "50px", border: "none"}} onClick={() => onSubmit(dc)}>완료</button>
-                        </div> :
-                        <div id={dc.id}>
-                            <span id={dc.id}>{dc.title} </span>
-                            <button id={dc.id} onClick={(e) => setEdit(dc.id)} style={{border: "none"}}>EDIT</button>
+                    (edit === dc.id && <div style={{display: "flex"}} id={dc.id}
+                                           style={{display: "flex", justifyContent: "space-between"}}>
+                            <input type="text" style={{width: "200px", height: "25px"}} ref={text} value={title} onChange={e => setTitle(e.target.value)}/>
+                            <div>
+                                <button style={{width: "50px", border: "none"}} onClick={() => onSubmit(dc)}>완료</button>
+                            </div>
                         </div>)
             })}
-
-            {/*{doc && doc.map(dc =>*/}
-            {/*    (<div id={dc.id}>*/}
-            {/*        <span>{dc.title} </span>*/}
-            {/*        <button onClick={editState(dc.id)} style={{border: "none"}}>EDIT</button>*/}
-            {/*    </div>)*/}
-            {/*)}*/}
-
-        </Fragment>)
-        ;
+        </div>);
 }
 
 
@@ -79,7 +73,6 @@ const mapStateToProps = state => ({
     doc: state.doc
 })
 EditCertificate.propTypes = {
-    addDocs: PropTypes.func.isRequired,
     getCategory: PropTypes.func.isRequired,
     getDocs: PropTypes.func.isRequired,
 }

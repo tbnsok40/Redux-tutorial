@@ -21,9 +21,10 @@ const Paper = ({selectedPatients: {name, birth, id}, click}) => {
     return (
         <div style={displayStyle}>
             <table>
+                <tbody>
                 <tr>
                     <td></td>
-                    <td style={{textAlign:"center"}}> <h2>{click && click.title}</h2> </td>
+                    <td style={{textAlign: "center"}}><h2>{click && click.title}</h2></td>
                     <td></td>
                 </tr>
                 <tr>
@@ -35,6 +36,7 @@ const Paper = ({selectedPatients: {name, birth, id}, click}) => {
                     <td>의사소견 :</td>
                     <td colSpan="2"><textarea name="" id="" cols="20" rows="10"/></td>
                 </tr>
+                </tbody>
             </table>
         </div>
     )
