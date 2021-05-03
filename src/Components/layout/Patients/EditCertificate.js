@@ -52,7 +52,7 @@ const EditCertificate = ({category: {category}, doc: {doc}, getDocs, getCategory
                     </div>)
                     ||
                     (edit === dc.id ? <div style={{display: "flex"}} id={dc.id}>
-                            <input type="text" style={{width: "200px"}} ref={text}/>
+                            <input type="text" style={{width: "200px"}} ref={text} value={dc.title}/>
                             <button style={{width: "50px", border: "none"}} onClick={() => onSubmit(dc)}>완료</button>
                         </div> :
                         <div id={dc.id}>

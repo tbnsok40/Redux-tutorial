@@ -103,7 +103,13 @@
       "title": "신청서"
     }
   ],
-  "docs": [],
+  "docs": [
+    {
+      "category": "증명서",
+      "title": "aaa 증명서",
+      "id": 1
+    }
+  ],
   "patients": [
     {
       "id": 1,
