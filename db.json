@@ -105,19 +105,19 @@
   ],
   "docs": [
     {
-      "id": 2,
-      "title": "bb 확인서 에딧12",
+      "id": 5,
+      "title": "입원 확인서",
       "category": "확인서"
     },
     {
-      "id": 4,
-      "title": "3",
-      "category": "소견서"
+      "category": "신청서",
+      "title": "입원 신청서",
+      "id": 6
     },
     {
-      "category": "확인서",
-      "title": "cc 확인서",
-      "id": 5
+      "category": "의뢰서",
+      "title": "병원 의뢰서",
+      "id": 7
     }
   ],
   "patients": [

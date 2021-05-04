@@ -4,13 +4,13 @@ import {connect} from 'react-redux'; // reducer와 연결하기 위해 필요한
 import PropTypes from 'prop-types';
 import {getCategory} from "../../../actions/categoryActions";
 import LogItem from "../LogItem";
-import Accordion from "../../Acc/Accordion";
+import Accordion from "./Accordion";
 import M from 'materialize-css/dist/js/materialize.min'
 import {getDocs} from "../../../actions/docsActions";
-import Searchbar from "./Searchbar";
+import Searchbar from "../Certificate/Searchbar";
 import {HashRouter} from "react-router-dom";
-import Paper from "./Paper";
-import EditCertificateModal from "../Patients/EditCertificate";
+import Paper from "../Certificate/Paper";
+import EditCertificateModal from "../Certificate/EditCertificate";
 
 const formatStyle = {
     border: "0px",

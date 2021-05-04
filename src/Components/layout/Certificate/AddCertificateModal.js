@@ -4,8 +4,8 @@ import {getDocs, addDocs} from '../../../actions/docsActions'
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 import M from 'materialize-css/dist/js/materialize.min.js'
-import AddCertificate from "../Patients/AddCertificate";
-import EditCertificate from "../Patients/EditCertificate";
+import AddCertificate from "./AddCertificate";
+import EditCertificate from "./EditCertificate";
 
 const AddCertificateModal = ({category: {category}, getDocs, getCategory, addDocs}) => {
     useEffect(() => {

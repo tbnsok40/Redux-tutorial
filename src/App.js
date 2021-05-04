@@ -12,9 +12,9 @@ import TechListModal from "./Components/layout/TechListModal";
 import {Provider} from 'react-redux';
 import store from './store';
 import EditLogModal from "./Components/layout/EditLogModal";
-import Formats from "./Components/layout/Certificate/Formats";
+import Formats from "./Components/layout/Accordion/Formats";
 import AddCertificateModal from "./Components/layout/Certificate/AddCertificateModal"
-import Accordion from './Components/Acc/Accordion'
+import Accordion from './Components/layout/Accordion/Accordion'
 import Patient from "./Components/layout/Patients/Patients";
 import Paper from './Components/layout/Certificate/Paper'
 import AddPatientModal from "./Components/layout/Patients/AddPatientModal";
