@@ -14,6 +14,11 @@ const AllPatients = ({patient: {patient}, getPatients}) => {
                     <th style={{background: "none", width: "50px"}}>{p.id}</th>
                     <td style={{background: "none"}}>{p.name}</td>
                     <td style={{background: "none"}}>{p.birth}</td>
+                    <td style={{background: "none"}}>{p.code}</td>
+                    {/*<td style={{background: "none", width: "30px"}}>*/}
+                    {/*    <button>EDIT</button>*/}
+                        {/*<button>DELETE</button>*/}
+                    {/*</td>*/}
                 </tr>
             ))}
         </Fragment>
