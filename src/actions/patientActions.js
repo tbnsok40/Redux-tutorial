@@ -32,9 +32,23 @@ export const addPatients = (newPatient) => async dispatch => {
             payload: data
         })
     }catch (err) {
+    }
+}
+export const deletePatients = (id) => async dispatch => {
+    try{
+        const res = await fetch(`/patients/${id}`,{
+            method:"DELETE"
+        })
+
+        const data = await res.json();
+        console.log(data);
+
+    }catch (err){
+
 
     }
 }
+
 
 export const searchPatients = (text) => async dispatch => {
     try {

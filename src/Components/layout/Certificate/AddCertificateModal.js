@@ -35,13 +35,11 @@ const AddCertificateModal = ({category: {category}, getDocs, getCategory, addDoc
             <div className="modal-content">
                 <div className="subtitle"
                      style={{background: "#FFFFFF", display: "flex", justifyContent: "space-between"}}>
-                    <h4 style={{background: "#FFFFFF"}} onClick={() => changePage('1')}>Enter Category and Document</h4>
-                    <h6 style={{background: "#FFFFFF"}} onClick={() => changePage('2')}>Edit Category and Document</h6>
+                    <h4 className="blue-text text-darken-1" style={{background: "#FFFFFF", cursor:"pointer"}} onClick={() => changePage('1')}>Enter Category/Document</h4>
+                    <h4 className="blue-text text-darken-1" style={{background: "#ffffff", cursor:"pointer"}} onClick={() => changePage('2')}>Edit Category/Document</h4>
                 </div>
-
                 {currPage === "1" && <AddCertificate/>}
                 {currPage === "2" && <EditCertificate/>}
-
             </div>
         </div>
     );

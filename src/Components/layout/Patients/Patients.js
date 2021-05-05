@@ -2,13 +2,15 @@ import React, {useRef, useEffect, useState} from 'react';
 import {getPatients, searchPatients, selectedPatient} from "../../../actions/patientActions";
 import {connect} from "react-redux";
 
-const Patient = ({name, selectedName, searchedPatients, getPatients, searchPatients, selectedPatient}) => {
+const Patient = ({name, selectedName, patient:{patient}, searchedPatients, getPatients, searchPatients, selectedPatient}) => {
     const text = useRef('')
     // const current = ''
     const [current, setCurrent] = useState('');
     useEffect(() => {
         getPatients();
-
+        const searchtab = document.getElementById("search");
+        searchtab.focus();
+        console.log(document.getElementById("search"))
     }, [])
 
     const onChange = () => {
@@ -46,14 +48,18 @@ const Patient = ({name, selectedName, searchedPatients, getPatients, searchPatie
                         value={current}
                         key={current}
                         className='browser-default'
-                        style={{marginTop:"15px", width:"100%"}}
+                        style={{marginTop: "15px", width: "100%"}}
                         onChange={e => setCurrentName(e.target.value)}
                 >
-
                     <option value='' disabled>
                         Select Patients
                     </option>
-                    {searchedPatients !== null && searchedPatients.map(c =>
+                    {!searchedPatients && patient && patient.map(c =>
+                        <option value={c.id} key={c.id}>
+                            {c.name} {c.birth}
+                        </option>
+                    )}
+                    {searchedPatients && searchedPatients.map(c =>
                         <option value={c.id} key={c.id}>
                             {c.name} {c.birth}
                         </option>
@@ -67,7 +73,8 @@ const Patient = ({name, selectedName, searchedPatients, getPatients, searchPatie
 const mapStateToProps = (state) => ({
     name: state.patient.name,
     searchedPatients: state.patient.searchedPatients,
-    selectedName: state.patient.selectedName
+    selectedName: state.patient.selectedName,
+    patient : state.patient
 
 })
 

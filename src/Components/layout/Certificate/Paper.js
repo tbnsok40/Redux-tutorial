@@ -14,6 +14,12 @@ const displayStyle = {
     boxShadow: "inset 8px 8px 8px #718bbd, inset -10px -10px 8px #a9d1ff"
 }
 
+const textareaStyle = {
+    // width: "750px",
+    height: "450px",
+    resize: "none"
+}
+
 const Paper = ({selectedPatients: {name, birth, id}, click}) => {
     useEffect(() => {
         searchPatients();
@@ -33,8 +39,8 @@ const Paper = ({selectedPatients: {name, birth, id}, click}) => {
                     <td>생년월일 : {birth}</td>
                 </tr>
                 <tr style={{height: "300px"}}>
-                    <td>의사소견 :</td>
-                    <td colSpan="2"><textarea name="" id="" cols="20" rows="10"/></td>
+                    <td>의사소견</td>
+                    <td colSpan="2"><textarea name="" id="" cols="20" rows="30" style={textareaStyle}/></td>
                 </tr>
                 </tbody>
             </table>
