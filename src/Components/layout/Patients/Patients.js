@@ -8,9 +8,12 @@ const Patient = ({name, selectedName, patient:{patient}, searchedPatients, getPa
     const [current, setCurrent] = useState('');
     useEffect(() => {
         getPatients();
+<<<<<<< HEAD
         const searchtab = document.getElementById("search");
         searchtab.focus();
         console.log(document.getElementById("search"))
+=======
+>>>>>>> fd8f87b85ef2fd187b126fa6e8ffdf44342ff9bf
     }, [])
 
     const onChange = () => {

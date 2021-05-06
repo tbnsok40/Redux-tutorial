@@ -19,7 +19,11 @@ const AllPatients = ({posts}) => {
                     <td style={{background: "none"}}>{p.code}</td>
                     {/*<td style={{background: "none", width: "30px"}}>*/}
                     {/*    <button>EDIT</button>*/}
+<<<<<<< HEAD
                     {/*<button>DELETE</button>*/}
+=======
+                        {/*<button>DELETE</button>*/}
+>>>>>>> fd8f87b85ef2fd187b126fa6e8ffdf44342ff9bf
                     {/*</td>*/}
                 </tr>
             ))}
