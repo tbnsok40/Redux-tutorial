@@ -8,10 +8,10 @@ import AddCertificate from "./AddCertificate";
 import EditCertificate from "./EditCertificate";
 
 const AddCertificateModal = ({category: {category}, getDocs, getCategory, addDocs}) => {
-    useEffect(() => {
-        getCategory();
-        getDocs();
-    }, [])
+    // useEffect(() => {
+    //     // getCategory();
+    //     // getDocs();
+    // }, [])
 
     const [title, setTitle] = useState('');
     const [currcategory, setCurrcategory] = useState('');
@@ -54,7 +54,7 @@ const mapStateToProps = state => ({
 AddCertificateModal.propTypes = {
     addDocs: PropTypes.func.isRequired,
     getCategory: PropTypes.func.isRequired,
-    getDocs: PropTypes.func.isRequired,
+    // getDocs: PropTypes.func.isRequired,
 }
 export default connect(mapStateToProps, {getCategory, addDocs, getDocs})(AddCertificateModal);
 

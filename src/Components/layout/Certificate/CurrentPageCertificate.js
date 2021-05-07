@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 import M from 'materialize-css/dist/js/materialize.min.js'
 
-const EditCertificate = ({certificates, doc: {doc}, getDocs, getCategory, updateDocs, deleteDocs}) => {
-    useEffect(() => {
-        getCategory();
-        getDocs();
-    }, [])
+const EditCertificate = ({temp, certificates, doc: {doc}, getDocs, getCategory, updateDocs, deleteDocs}) => {
+    // useEffect(() => {
+        // getCategory();
+        // getDocs();
+    // }, [getDocs])
 
     const text = useRef();
     const [title, setTitle] = useState('');
@@ -32,9 +32,13 @@ const EditCertificate = ({certificates, doc: {doc}, getDocs, getCategory, update
             title: text.current.value,
             category: dc.category
         }
-        updateDocs(newDocs);
+        // updateDocs(newDocs);
         setEdit(false);
         getDocs();
+        // 여기서 새로고침
+        // window.location.reload();
+
+        temp(newDocs);
     }
     const changeEdit = (doc) => {
         setEdit(doc.id);

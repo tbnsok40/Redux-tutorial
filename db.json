@@ -105,34 +105,9 @@
   ],
   "docs": [
     {
-      "id": 6,
-      "title": "탈퇴 신청서",
-      "category": "신청서"
-    },
-    {
-      "id": 7,
-      "title": "병원 의뢰서",
-      "category": "의뢰서"
-    },
-    {
-      "category": "소견서",
-      "title": "입원 소견서",
-      "id": 8
-    },
-    {
-      "category": "진단서",
-      "title": "수술 진단서",
-      "id": 9
-    },
-    {
-      "category": "신청서",
-      "title": "퇴원 신청서",
-      "id": 10
-    },
-    {
-      "category": "의뢰서",
+      "id": 11,
       "title": "진단 의뢰서",
-      "id": 11
+      "category": "의뢰서"
     },
     {
       "category": "소견서",
@@ -150,9 +125,9 @@
       "id": 14
     },
     {
-      "category": "의뢰서",
-      "title": "퇴원 의뢰서",
-      "id": 15
+      "id": 15,
+      "title": "퇴원 및 입원 의뢰서",
+      "category": "의뢰서"
     },
     {
       "category": "의뢰서",
@@ -165,9 +140,64 @@
       "id": 17
     },
     {
-      "category": "진단서",
+      "id": 18,
       "title": "건강 진단서",
-      "id": 18
+      "category": "진단서"
+    },
+    {
+      "category": "확인서",
+      "title": "회사 확인서",
+      "id": 19
+    },
+    {
+      "category": "진단서",
+      "title": "퇴원 진단서",
+      "id": 20
+    },
+    {
+      "category": "신청서",
+      "title": "수석 신청서",
+      "id": 21
+    },
+    {
+      "category": "의뢰서",
+      "title": "입사 의뢰서",
+      "id": 22
+    },
+    {
+      "category": "소견서",
+      "title": "의원 소견서",
+      "id": 23
+    },
+    {
+      "category": "증명서",
+      "title": "재직 증명서",
+      "id": 24
+    },
+    {
+      "category": "진단서",
+      "title": "의료 진단서",
+      "id": 25
+    },
+    {
+      "category": "진단서",
+      "title": "질병 진단서",
+      "id": 26
+    },
+    {
+      "category": "소견서",
+      "title": "자체 소견서",
+      "id": 27
+    },
+    {
+      "category": "의뢰서",
+      "title": "경찰 의뢰서",
+      "id": 28
+    },
+    {
+      "category": "진단서",
+      "title": "경찰 진단서",
+      "id": 29
     }
   ],
   "patients": [

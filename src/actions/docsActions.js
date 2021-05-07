@@ -10,6 +10,7 @@ export const getDocs = () => async dispatch => {
     try {
         const res = await fetch('/docs');
         const data = await res.json();
+        // console.log("getDocs: ", data);
         dispatch({
             type: GET_DOCS,
             payload: data
@@ -24,7 +25,6 @@ export const getDocs = () => async dispatch => {
 
 export const updateDocs = (doc) => async dispatch => {
     try {
-        console.log(doc, doc.id)
         const res = await fetch((`/docs/${doc.id}`), {
             method: "PUT",
             body: JSON.stringify(doc),

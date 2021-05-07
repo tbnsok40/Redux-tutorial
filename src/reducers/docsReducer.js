@@ -34,14 +34,12 @@ export default (state = initialState, action) => {
                 // doc: action.payload
             }
         case UPDATE_DOCS:
-            console.log(action.payload)
             return {
                 ...state,
                 doc: state.doc.map(dc => dc.id === action.payload ? action.payload : dc)
             }
         case DELETE_DOCS:
-            console.log("delete");
-            return{
+            return {
                 ...state,
                 doc: state.doc.filter(dc => dc.id !== action.payload)
             }

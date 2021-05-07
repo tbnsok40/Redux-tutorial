@@ -10,6 +10,17 @@ const AllPatients = ({patient: {patient}, getPatients}) => {
         setPosts(patient);
 
     }, [])
+    // return (
+    //     <div style={{background: "none", marginTop: "20px", height: "800px"}}>
+    //         <table style={{background: "none", textAlign: "center"}}>
+    //             <tr style={{background: "none"}}>
+    //                 <th style={{background: "none", width: "20px", }}>환자번호</th>
+    //                 <td style={{background: "none", width: "20px"}}>이름</td>
+    //                 <td style={{background: "none", width: "20px"}}>생년월일</td>
+    //                 <td style={{background: "none", width: "20px"}}>코드</td>
+    //                 {/*<td style={{background: "none", width: "30px"}}>수정 / 삭제</td>*/}
+    //             </tr>
+    //             <CurrentPagePatients/>
 
     const [posts, setPosts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
