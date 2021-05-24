@@ -28,7 +28,7 @@ const App = () => {
     return (
         <Provider store={store}>
             <Fragment>
-                <div className="main" style={{width:"80%", height: "100%", background:"#8daeec"}}>
+                <div className="main" style={{width:"80%", height: "100%"}}>
                     <div className="navbar-left">
                         <Formats/>
                         <AddCertificateModal/>

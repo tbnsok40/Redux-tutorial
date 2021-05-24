@@ -2,7 +2,15 @@ import React, {useRef, useEffect, useState} from 'react';
 import {getPatients, searchPatients, selectedPatient} from "../../../actions/patientActions";
 import {connect} from "react-redux";
 
-const Patient = ({name, selectedName, patient:{patient}, searchedPatients, getPatients, searchPatients, selectedPatient}) => {
+const Patient = ({
+                     name,
+                     selectedName,
+                     patient: {patient},
+                     searchedPatients,
+                     getPatients,
+                     searchPatients,
+                     selectedPatient
+                 }) => {
     const text = useRef('')
     // const current = ''
     const [current, setCurrent] = useState('');
@@ -28,11 +36,10 @@ const Patient = ({name, selectedName, patient:{patient}, searchedPatients, getPa
     }
 
     return (
-        <nav style={{marginTop: '20px', marginBottom: '90px', width: "100%"}} className="transparent">
+        <nav style={{marginTop: '20px', marginBottom: '90px', width: "100%"}} className="card">
             <div className="nav-wrapper" style={{width: "100%", background: "transparent"}}>
                 <form>
-                    <div className="input-field"
-                         style={{boxShadow: "inset 5px 5px 5px #718bbd, inset -4px -4px 4px #a9d1ff"}}>
+                    <div className="input-field">
                         <input id="search" ref={text}
                                type="search"
                                onChange={onChange}
@@ -74,8 +81,7 @@ const mapStateToProps = (state) => ({
     name: state.patient.name,
     searchedPatients: state.patient.searchedPatients,
     selectedName: state.patient.selectedName,
-    patient : state.patient
-
+    patient: state.patient
 })
 
 export default connect(mapStateToProps, {getPatients, searchPatients, selectedPatient})(Patient);

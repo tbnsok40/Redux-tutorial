@@ -13,10 +13,10 @@ const Searchbar = ({searchDocs, getDocs}) => {
         getDocs();
     }
     return (
-        <nav style={{marginTop: '20px',marginBottom: '30px', width: "85%"}} className="transparent">
-            <div className="nav-wrapper" style={{width: "100%", background: "transparent"}}>
-                <form >
-                    <div className="input-field" style={{boxShadow: "inset 5px 5px 5px #718bbd, inset -4px -4px 4px #a9d1ff"}}>
+        <nav style={{marginTop: '20px',marginBottom: '30px', width: "85%",}} className="card">
+            <div className="nav-wrapper">
+                <form>
+                    <div className="input-field">
                         <input id="search" type="search" placeholder="Search Docs.."
                                ref={text}
                                onChange={onChange}/>

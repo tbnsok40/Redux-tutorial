@@ -7,11 +7,11 @@ const displayStyle = {
     // border: "1px solid black",
     borderRadius: "7px",
     padding: "10px 15px 0 25px",
-    background: "#8daeec",
+    // background: "#8daeec",
     height: "640px",
-    // boxShadow:  " -23px -23px 46px #728dbf,\n" +
-    //     "             23px 23px 46px #a8cfff"
-    boxShadow: "inset 8px 8px 8px #718bbd, inset -10px -10px 8px #a9d1ff"
+    // boxShadow:  " -8px -8px 14px #ffffff,\n" +
+    //     "             10px 10px 20px #a8cfff"
+    // boxShadow: "inset 8px 8px 8px #718bbd, inset -10px -10px 8px"
 }
 
 const textareaStyle = {
@@ -25,7 +25,7 @@ const Paper = ({selectedPatients: {name, birth, id}, click}) => {
         searchPatients();
     }, [])
     return (
-        <div style={displayStyle}>
+        <div style={displayStyle} className="card">
             <table>
                 <tbody>
                 <tr>

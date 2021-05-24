@@ -24,36 +24,41 @@ const AddPatientModal = ({addPatients}) => {
     const onClick = () => {
         addPatients(inputs)
     }
+    const divStyle = {
+        background: "white",
+        width: "550px"
+    };
+
 
     return (
         <Fragment>
 
-            <div className="row">
+            <div className="row" style={divStyle}>
                 <div className="input-field">
                 </div>
             </div>
 
-            <div className="row">
-                <div className="input-field" style={{width: "600px"}}>
-                    <label htmlFor="message" className='active'>이름</label>
+            <div className="row" style={divStyle}>
+                <div className="input-field" style={divStyle}>
+                    <label htmlFor="message" className='active' style={divStyle}>이름</label>
                     <input value={name} name='name' type="text" className="" onChange={onChange}/>
                 </div>
             </div>
-            <div className="row">
-                <div className="input-field" style={{width: "600px"}}>
-                    <label htmlFor="message" className='active'>생년월일</label>
+            <div className="row" style={divStyle}>
+                <div className="input-field" style={divStyle}>
+                    <label htmlFor="message" className='active' style={divStyle}>생년월일</label>
                     <input value={birth} name='birth' type="text" className="" onChange={onChange}/>
                 </div>
             </div>
-            <div className="row">
-                <div className="input-field" style={{width: "600px"}}>
-                    <label htmlFor="message" className='active'>진단코드</label>
+            <div className="row" style={divStyle}>
+                <div className="input-field" style={divStyle}>
+                    <label htmlFor="message" className='active' style={divStyle}>진단코드</label>
                     <input value={code} name='code' type="text" className="" onChange={onChange}/>
                 </div>
             </div>
-            <div className="row">
-                <div className="input-field" style={{width: "600px"}}>
-                    <label htmlFor="message" className='active'>연락처</label>
+            <div className="row" style={divStyle}>
+                <div className="input-field" style={divStyle}>
+                    <label htmlFor="message" className='active' style={divStyle}>연락처</label>
                     <input value={phone} name='phone' type="text" className="" onChange={onChange}/>
                 </div>
             </div>

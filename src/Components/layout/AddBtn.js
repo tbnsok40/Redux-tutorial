@@ -30,7 +30,7 @@ const AddBtn = () => {
     return (
         <div className="fixed-action-btn">
             <a href="#add-title-modal"
-               className="btn-floating btn-large blue darken-2 modal-trigger"
+               className="btn-floating btn-large black darken-2 modal-trigger"
                id="add"
                onMouseEnter={e => {
                    Event.Hover(e.target)
@@ -43,7 +43,7 @@ const AddBtn = () => {
             </a>
             <ul>
                 <li>
-                    <a href="#add-patient-modal" className="btn-floating green modal-trigger">
+                    <a href="#add-patient-modal" className="btn-floating white modal-trigger">
                         <i className="material-icons">person</i>
                     </a>
                 </li>

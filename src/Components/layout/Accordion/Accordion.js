@@ -30,20 +30,20 @@ const CustomToggle = ({children, eventKey}) => {
 const cardStyle = {
     display: "flex",
     justifyContent: "space-between",
-    cursor: "pointer"
+    cursor: "pointer",
+    background: "#d6d4d4",
 }
 
 const accordionStyle = {
     width: "280px",
     border: "none",
-    // background: "#8daeec",
-    boxShadow: " -10px -1px 21px #728dbf,\n" +
-        "             10px 1px 23px #a8cfff"
+    // boxShadow: " -10px -1px 21px #728dbf,\n" +
+    //     "             10px 1px 23px #a8cfff"
 }
 
 const collapseStyle = {
-    borderBottom: "1px solid #6493ea",
-    background: "#8daeec"
+    // borderBottom: "1px solid #6493ea",
+    // background: "#8daeec"
 }
 
 const Example = ({category: {category}, doc: {doc}, clickedDocs}) => {
