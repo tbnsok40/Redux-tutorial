@@ -1,62 +1,4 @@
 {
-  "techs": [
-    {
-      "id": 1,
-      "firstName": "John",
-      "lastName": "Doe"
-    },
-    {
-      "id": 2,
-      "firstName": "Sam",
-      "lastName": "Smith"
-    },
-    {
-      "id": 3,
-      "firstName": "Sara",
-      "lastName": "Wilson"
-    },
-    {
-      "category": [
-        {
-          "id": 1,
-          "title": "의뢰서"
-        },
-        {
-          "id": 2,
-          "title": "확인서"
-        }
-      ],
-      "id": 3
-    },
-    {
-      "category": [
-        {
-          "id": 1,
-          "title": "의뢰서"
-        },
-        {
-          "id": 2,
-          "title": "확인서"
-        }
-      ],
-      "id": 4
-    },
-    {
-      "currcategory": "확인서",
-      "title": "주니어 썸띵",
-      "id": 5
-    },
-    {
-      "currcategory": "의뢰서",
-      "title": "10진태",
-      "id": 6
-    },
-    {
-      "category": "확인서",
-      "title": "에러날까?",
-      "id": 7
-    }
-  ],
   "category": [
     {
       "id": 1,
@@ -96,7 +38,7 @@
     },
     {
       "id": 15,
-      "title": "퇴원 및 입원 의뢰서",
+      "title": "퇴입원 의뢰서",
       "category": "의뢰서"
     },
     {
