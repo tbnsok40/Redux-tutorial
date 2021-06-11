@@ -14,7 +14,7 @@ npm i redux react-redux redux-thunk redux-devtools-extension
 
 (병원 개인정보동의서 발급 기능 => 발급된 서류는 어떻게 저장할 것인)
 
--
+- push 가 왜 안돼?
 
 ### State is immutable, that's the rule of redux.
 Mutaion in state is not recommended.
