@@ -13,17 +13,14 @@ const AddCertificate = ({category: {category}, getDocs, getCategory, addDocs}) =
 
     const [title, setTitle] = useState('');
     const [currcategory, setCurrcategory] = useState('');
-    const [currPage, setCurrPage] = useState("1")
     const onSubmit = () => {
         const category = currcategory
-
         const newTitle = {
             category,
             title
         }
         addDocs(newTitle);
         M.toast({html: `titles added in ${category}`})
-
         setTitle('');
     }
 
@@ -61,8 +58,6 @@ const AddCertificate = ({category: {category}, getDocs, getCategory, addDocs}) =
     );
 }
 
-
-// mapStateToProps 는 상위에서 import 할 필요없다.
 const mapStateToProps = state => ({
     category: state.category,
     doc: state.doc
@@ -73,4 +68,3 @@ AddCertificate.propTypes = {
     getDocs: PropTypes.func.isRequired,
 }
 export default connect(mapStateToProps, {getCategory, addDocs, getDocs})(AddCertificate);
-

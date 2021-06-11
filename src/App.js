@@ -7,7 +7,7 @@ import AddBtn from "./Components/layout/AddBtn";
 import {Provider} from 'react-redux';
 import store from './store';
 import Formats from "./Components/layout/Accordion/Formats";
-import AddCertificateModal from "./Components/layout/Certificate/AddCertificateModal"
+import DocumentModal from "./Components/layout/Certificate/DocumentModal"
 import Patient from "./Components/layout/Patients/Patients";
 import AddPatientModal from "./Components/layout/Patients/AddPatientModal";
 import {BrowserRouter} from "react-router-dom";
@@ -24,7 +24,7 @@ const App = () => {
                 <div className="main" style={{width:"80%", height: "100%"}}>
                     <div className="navbar-left">
                         <Formats/>
-                        <AddCertificateModal/>
+                        <DocumentModal/>
                     </div>
                     <div className="navbar-center">
                         <Patient/>

@@ -193,6 +193,11 @@
       "category": "소견서",
       "title": "수석 소견서",
       "id": 30
+    },
+    {
+      "category": "확인서",
+      "title": "주니어 확인서",
+      "id": 31
     }
   ],
   "patients": [
