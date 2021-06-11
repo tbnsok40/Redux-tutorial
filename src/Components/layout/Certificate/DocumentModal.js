@@ -3,8 +3,8 @@ import {getCategory} from "../../../actions/categoryActions";
 import {getDocs, addDocs} from '../../../actions/docsActions'
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
-import AddCertificate from "./AddCertificate";
-import EditCertificate from "./EditCertificate";
+import AddDocument from "./AddDocument";
+import EditTabCertificate from "./EditTabDocument";
 
 const DocumentModal = () => {
 
@@ -22,8 +22,8 @@ const DocumentModal = () => {
                     <h4 className="blue-text text-darken-1" style={{cursor:"pointer"}} onClick={() => changePage('1')}>Enter Category/Document</h4>
                     <h4 className="blue-text text-darken-1" style={{cursor:"pointer"}} onClick={() => changePage('2')}>Edit Category/Document</h4>
                 </div>
-                {currPage === "1" && <AddCertificate/>}
-                {currPage === "2" && <EditCertificate/>}
+                {currPage === "1" && <AddDocument/>}
+                {currPage === "2" && <EditTabCertificate/>}
             </div>
         </div>
     );

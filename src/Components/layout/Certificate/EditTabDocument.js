@@ -1,18 +1,16 @@
 import React, {Fragment, useEffect, useRef, useState} from "react";
 import {getCategory} from "../../../actions/categoryActions";
 import {getDocs, addDocs, updateDocs, deleteDocs} from '../../../actions/docsActions'
-import PropTypes, {func} from 'prop-types';
+import PropTypes from 'prop-types';
 import {connect} from "react-redux";
-import M from 'materialize-css/dist/js/materialize.min.js'
-import CurrentPageCertificate from "./CurrentPageCertificate";
+import UpdateDocument from "./UpdateDocument";
 import Pagination from "../Patients/Pagination";
 
-const EditCertificate = ({doc: {doc}, getDocs, getCategory, updateDocs}) => {
+const EditTabDocument = ({doc: {doc}, getDocs, updateDocs}) => {
     useEffect(() => {
-        // getCategory();
         setPosts(doc);
         getDocs();
-    }, [doc]) // useCallback을 써라?
+    }, [doc]) // 무한 호출
 
     const [posts, setPosts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -32,8 +30,7 @@ const EditCertificate = ({doc: {doc}, getDocs, getCategory, updateDocs}) => {
 
     return (
         <Fragment>
-            <CurrentPageCertificate certificates={currentPosts(posts)} temp={temp}/>
-            {/*component 재활용 goood*/}
+            <UpdateDocument certificates={currentPosts(posts)} temp={temp}/>
             <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={setCurrentPage}/>
         </Fragment>);
 }
@@ -42,9 +39,8 @@ const mapStateToProps = state => ({
     category: state.category,
     doc: state.doc
 })
-EditCertificate.propTypes = {
+EditTabDocument.propTypes = {
     getCategory: PropTypes.func.isRequired,
     getDocs: PropTypes.func.isRequired,
 }
-export default connect(mapStateToProps, {getCategory, addDocs, getDocs, updateDocs, deleteDocs})(EditCertificate);
-
+export default connect(mapStateToProps, {getCategory, addDocs, getDocs, updateDocs, deleteDocs})(EditTabDocument);

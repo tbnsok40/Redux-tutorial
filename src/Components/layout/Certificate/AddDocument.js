@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 import M from 'materialize-css/dist/js/materialize.min.js'
 
-const AddCertificate = ({category: {category}, getDocs, getCategory, addDocs}) => {
+const AddDocument = ({category: {category}, getDocs, getCategory, addDocs}) => {
     useEffect(() => {
         getCategory();
         getDocs();
@@ -62,9 +62,9 @@ const mapStateToProps = state => ({
     category: state.category,
     doc: state.doc
 })
-AddCertificate.propTypes = {
+AddDocument.propTypes = {
     addDocs: PropTypes.func.isRequired,
     getCategory: PropTypes.func.isRequired,
     getDocs: PropTypes.func.isRequired,
 }
-export default connect(mapStateToProps, {getCategory, addDocs, getDocs})(AddCertificate);
+export default connect(mapStateToProps, {getCategory, addDocs, getDocs})(AddDocument);

@@ -1,30 +1,14 @@
-import React, {Fragment, useEffect, useRef, useState} from "react";
+import React, {Fragment, useRef, useState} from "react";
 import {getCategory} from "../../../actions/categoryActions";
 import {getDocs, updateDocs, deleteDocs} from '../../../actions/docsActions'
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
-import M from 'materialize-css/dist/js/materialize.min.js'
 
-const EditCertificate = ({temp, certificates, doc: {doc}, getDocs, getCategory, updateDocs, deleteDocs}) => {
-    // useEffect(() => {
-        // getCategory();
-        // getDocs();
-    // }, [getDocs])
+const UpdateDocument = ({temp, certificates, getDocs, deleteDocs}) => {
 
     const text = useRef();
     const [title, setTitle] = useState('');
     const [edit, setEdit] = useState(false);
-
-    // const [currentPage, setCurrentPage] = useState(1);
-    // const [postsPerPage, setPostsPerPage] = useState(9);
-    // const indexOfLast = currentPage * postsPerPage;
-    // const indexOfFirst = indexOfLast - postsPerPage;
-    //
-    // function currentPosts(tmp) {
-    //     let currentPosts = 0;
-    //     currentPosts = tmp.slice(indexOfFirst, indexOfLast);
-    //     return currentPosts;
-    // }
 
     const onSubmit = (dc) => {
         const newDocs = {
@@ -32,18 +16,16 @@ const EditCertificate = ({temp, certificates, doc: {doc}, getDocs, getCategory, 
             title: text.current.value,
             category: dc.category
         }
-        // updateDocs(newDocs);
         setEdit(false);
         getDocs();
-        // 여기서 새로고침
-        // window.location.reload();
-
         temp(newDocs);
     }
+
     const changeEdit = (doc) => {
         setEdit(doc.id);
         setTitle(doc.title)
     }
+
     const onDelete = (id) => {
         deleteDocs(id);
     }
@@ -52,7 +34,6 @@ const EditCertificate = ({temp, certificates, doc: {doc}, getDocs, getCategory, 
     const btnStyle = {border: "none"};
     const inputStyle = {width: "200px", height: "25px"};
 
-    // 컴포넌트가 2개의 역할을 다해서 문제 ==> 분리 해야한다 => 조회와 수정
     return (
         <Fragment>
             {certificates && certificates.map(dc => {
@@ -86,7 +67,7 @@ const mapStateToProps = state => ({
     category: state.category,
     doc: state.doc
 })
-EditCertificate.propTypes = {
+UpdateDocument.propTypes = {
     getCategory: PropTypes.func.isRequired,
     getDocs: PropTypes.func.isRequired,
 }
