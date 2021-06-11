@@ -18,15 +18,6 @@ const AddBtn = () => {
         }
     }
 
-    // const Hover = (target) => {
-    //     console.log('tar: ', target)
-    //     // const blueBtn = document.getElementById("add")
-    //     // const icon = document.querySelector("i")
-    //     target.classList.value = ''
-    //     target.style = {fontsize: "10px"}
-    //     target.innerHTML = "docs"
-    // }
-
     return (
         <div className="fixed-action-btn">
             <a href="#add-title-modal"
@@ -43,7 +34,7 @@ const AddBtn = () => {
             </a>
             <ul>
                 <li>
-                    <a href="#add-patient-modal" className="btn-floating white modal-trigger">
+                    <a href="#add-patient-modal" className="btn-floating black modal-trigger">
                         <i className="material-icons">person</i>
                     </a>
                 </li>
