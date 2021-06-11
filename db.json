@@ -1,24 +1,4 @@
 {
-  "logs": [
-    {
-      "attention": true,
-      "tech": "Sam Smith",
-      "date": "2021-04-11T11:09:07.703Z",
-      "id": 2
-    },
-    {
-      "id": 3,
-      "attention": true,
-      "tech": "John Doe",
-      "date": "2021-04-11T11:18:20.770Z"
-    },
-    {
-      "id": 4,
-      "attention": "",
-      "tech": "Sam Smith",
-      "date": "2021-04-11T11:17:18.339Z"
-    }
-  ],
   "techs": [
     {
       "id": 1,

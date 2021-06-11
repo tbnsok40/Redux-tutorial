@@ -7,11 +7,11 @@ import AddBtn from "./Components/layout/AddBtn";
 import {Provider} from 'react-redux';
 import store from './store';
 import Formats from "./Components/layout/Accordion/Formats";
-import DocumentModal from "./Components/layout/Certificate/DocumentModal"
+import DocumentModal from "./Components/layout/Document/DocumentModal"
 import Patient from "./Components/layout/Patients/Patients";
 import AddPatientModal from "./Components/layout/Patients/AddPatientModal";
 import {BrowserRouter} from "react-router-dom";
-import Document from "./Components/layout/Certificate/Document";
+import Document from "./Components/layout/Document/Document";
 
 const App = () => {
     useEffect(() => {

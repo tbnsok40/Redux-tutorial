@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {getCategory} from "../../../actions/categoryActions";
 import Accordion from "./Accordion";
 import {getDocs} from "../../../actions/docsActions";
-import Searchbar from "../Certificate/Searchbar";
+import Searchbar from "../Document/Searchbar";
 import {HashRouter} from "react-router-dom";
 
 const formatStyle = {

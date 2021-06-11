@@ -62,7 +62,6 @@ const UpdateDocument = ({temp, certificates, getDocs, deleteDocs}) => {
         </Fragment>);
 }
 
-
 const mapStateToProps = state => ({
     category: state.category,
     doc: state.doc
@@ -71,5 +70,4 @@ UpdateDocument.propTypes = {
     getCategory: PropTypes.func.isRequired,
     getDocs: PropTypes.func.isRequired,
 }
-export default connect(mapStateToProps, {getCategory, getDocs, updateDocs, deleteDocs})(EditCertificate);
-
+export default connect(mapStateToProps, {getCategory, getDocs, updateDocs, deleteDocs})(UpdateDocument);
