@@ -4,23 +4,17 @@ import {searchPatients} from "../../../actions/patientActions";
 import {clickedDocs} from "../../../actions/docsActions";
 
 const displayStyle = {
-    // border: "1px solid black",
     borderRadius: "7px",
     padding: "10px 15px 0 25px",
-    // background: "#8daeec",
     height: "640px",
-    // boxShadow:  " -8px -8px 14px #ffffff,\n" +
-    //     "             10px 10px 20px #a8cfff"
-    // boxShadow: "inset 8px 8px 8px #718bbd, inset -10px -10px 8px"
 }
 
 const textareaStyle = {
-    // width: "750px",
     height: "450px",
     resize: "none"
 }
 
-const Paper = ({selectedPatients: {name, birth, id}, click}) => {
+const Document = ({selectedPatients: {name, birth, id}, click}) => {
     useEffect(() => {
         searchPatients();
     }, [])
@@ -52,4 +46,4 @@ const mapStateToProps = (state) => ({
     click: state.doc.click
 })
 
-export default connect(mapStateToProps, {clickedDocs})(Paper)
+export default connect(mapStateToProps, {clickedDocs})(Document)

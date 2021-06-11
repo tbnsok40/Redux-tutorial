@@ -2,23 +2,16 @@ import './App.css';
 import 'materialize-css/dist/css/materialize.min.css'
 import M from 'materialize-css/dist/js/materialize.min.js'
 import {useEffect, Fragment} from 'react';
-import Searchbar from './Components/layout/Certificate/Searchbar'
-import Logs from './Components/layout/Logs';
 import AddBtn from "./Components/layout/AddBtn";
-import AddLogModal2 from "./Components/layout/AddLogModal2";
-import AddTechModal from "./Components/layout/AddTechModal";
-import TechListModal from "./Components/layout/TechListModal";
 
 import {Provider} from 'react-redux';
 import store from './store';
-import EditLogModal from "./Components/layout/EditLogModal";
 import Formats from "./Components/layout/Accordion/Formats";
 import AddCertificateModal from "./Components/layout/Certificate/AddCertificateModal"
-import Accordion from './Components/layout/Accordion/Accordion'
 import Patient from "./Components/layout/Patients/Patients";
-import Paper from './Components/layout/Certificate/Paper'
 import AddPatientModal from "./Components/layout/Patients/AddPatientModal";
 import {BrowserRouter} from "react-router-dom";
+import Document from "./Components/layout/Certificate/Document";
 
 const App = () => {
     useEffect(() => {
@@ -35,7 +28,7 @@ const App = () => {
                     </div>
                     <div className="navbar-center">
                         <Patient/>
-                        <Paper/>
+                        <Document/>
                     </div>
                     <AddBtn/>
                     <BrowserRouter>
